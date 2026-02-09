@@ -1,0 +1,132 @@
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .txt2{
+	margin-left:-280px;
+	padding:0px 0px 11px 85px;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .txt3{
+	margin-left:-280px;
+	padding:0px 0px 11px 160px;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup1{
+	margin-left:-280px;
+	padding:0px 0px 11px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup2{
+	margin-left:-280px;
+	padding:0px 0px 11px 85px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup3{
+	margin-left:-280px;
+	padding:0px 0px 11px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup1i{
+	margin-left:-280px;
+	padding:0px 0px 11px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 0 15% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup2i{
+	margin-left:-280px;
+	padding:0px 0px 11px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 70% 15% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup3i{
+	margin-left:-280px;
+	padding:0px 0px 11px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 90% 15% no-repeat;
+	background-size:10px auto;
+}
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip1{
+	margin-left:-280px;
+	padding:10px 0 21px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip2{
+	margin-left:-280px;
+	padding:10px 0 21px 75px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip3{
+	margin-left:-280px;
+	padding:10px 0 21px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip1i{
+	margin-left:-280px;
+	padding:10px 0 11px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 0 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip2i{
+	margin-left:-280px;
+	padding:10px 0 11px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 70% 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip3i{
+	margin-left:-280px;
+	padding:10px 0 11px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 90% 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown1{
+	margin-left:-280px;
+	padding:5px 0 0px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown2{
+	margin-left:-280px;
+	padding:5px 0 0px 85px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown3{
+	margin-left:-280px;
+	padding:5px 0 0px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown1i{
+	margin-left:-280px;
+	padding:5px 0 0px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 0 100% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown2i{
+	margin-left:-280px;
+	padding:5px 0 0px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 70% 100% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown3i{
+	margin-left:-280px;
+	padding:5px 0 0px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 90% 100% no-repeat;
+	background-size:10px auto;
+}

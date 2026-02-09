@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.errorMsg{
+	font-size: 12px;
+	color: red;
+	padding-bottom:10px;
+	width: calc(100% - 30px);
+    margin: 0 auto;
+}
+/* ↓写メ日記・オキニトーク回数制限設定カスタマイズ @NLS 2025/10/09 ソース追加 */
+#inputError .error-message .limitErrors {
+    padding: 10px;
+}
+/* ↑写メ日記・オキニトーク回数制限設定カスタマイズ @NLS 2025/10/09 ソース追加 */

@@ -1,0 +1,69 @@
+// #181203C_ログイン状態によるバナー表示切替対応 start
+if (typeof get_admage_login_parameter === 'undefined') {
+
+	function init_admage_login_parameter_getter() {
+		const LOGIN_PARAM = '&_login=1';
+		const NOT_LOGIN_PARAM = '&_login=0';
+
+		const SHOP_SITES = /.cityheaven.net$/;
+		const SHOP_LOGIN_PARAMS = /;[\s]*lo=1;/;
+
+		function parse_shop_site_login_parameter() {
+			var login_flg = SHOP_LOGIN_PARAMS.test('; ' + document.cookie + ';');
+			if (login_flg) {
+				return LOGIN_PARAM;
+			}
+			return NOT_LOGIN_PARAM;
+		}
+
+		function parse_no_site_login_parameter() {
+			return null;
+		}
+
+		var _domain;
+		try {
+			_domain = top.document.domain;
+		} catch(e) {
+			// if top is cross orgin
+		}
+		var _parse_login_parameter;
+		switch(true) {
+			case SHOP_SITES.test(_domain):
+				_parse_login_parameter = parse_shop_site_login_parameter;
+				break;
+			default:
+				_parse_login_parameter = parse_no_site_login_parameter;
+				break;
+		}
+
+		var _login_parameter;
+		function _get_login_parameter() {
+			return _login_parameter;
+		}
+		function _reset_login_parameter() {
+			_login_parameter = _parse_login_parameter();
+		}
+
+		get_admage_login_parameter = _get_login_parameter;
+		reset_admage_login_parameter = _reset_login_parameter;
+
+		_reset_login_parameter();
+	}
+	var get_admage_login_parameter;
+	var reset_admage_login_parameter;
+	init_admage_login_parameter_getter();
+}
+// #181203C_ログイン状態によるバナー表示切替対応 end
+
+function admage_js(_adm_domain, _adm_arg) {
+
+	var _adm_src = _adm_domain + "/p/js?" + _adm_arg;
+	_adm_src += "&_ref=" + escape(top.document.referrer);
+// #181203C_ログイン状態によるバナー表示切替対応 start
+	_adm_src += get_admage_login_parameter() + "&_nocache=" + (new Date).getTime() ;
+// #181203C_ログイン状態によるバナー表示切替対応 end
+
+	_adm_src = "<scr" + "ipt language='javascript' src='" + _adm_src + "'></script>";
+	
+	document.write(_adm_src);
+}

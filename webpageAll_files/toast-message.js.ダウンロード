@@ -1,0 +1,29 @@
+//---------------------------------------------------------
+// メッセージトースト表示
+//---------------------------------------------------------
+$(function(){
+	var msgText = $("#message").val();
+	if (msgText > '') {
+		var html = '<div id="toastMsg">'
+				 + '    <div class="content">'
+				 + '        <div class="message">'
+				 +              msgText
+				 + '        </div>'
+				 + '    </div>'
+				 + '</div>';
+
+		if ($("#toastMsg").size() == 0) {
+			$('#home').append(html);
+			$('div#toastMsg').slideDown(600).delay(2500).fadeOut(0, function() {
+				$('div#toastMsg').remove();
+				$("#message").val("");
+			});
+		}
+
+		$('div#toastMsg').click(function(e) {
+			e.preventDefault();
+			$('div#toastMsg').remove();
+			$("#message").val("");
+		});
+	}
+});

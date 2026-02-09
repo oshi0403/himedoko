@@ -1,0 +1,112 @@
+#slide_area {
+  z-index:2500;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: auto;
+  background: #fff;
+}
+
+#slide_area .slide-inner {
+  overflow: auto;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+#slide_mask {
+    position: fixed;
+    inset: 0px;
+    z-index: 2499;
+    background-position: right 300px top 0px;
+    display: none;
+    background: #0008;
+    background-image: url(/img/icon/batu.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: right 300px top 0px;
+}
+
+.notify_title {
+    padding: 12px 10px;
+    background: #f47;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.notify_title_icon {
+    width: 22px;
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+.notify_row {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.notify_row_title {
+    margin-bottom: 5px;
+    color: #f25;
+    font-weight: bold;
+}
+
+.notify_empty_message {
+    margin: 5px;
+    font-size: 18px;
+}
+
+#login-modal-notify {
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #aaa;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    position: fixed;
+    z-index: 4000;
+    height: auto;
+    max-height: 96%;
+    overflow: scroll;
+    font-size: 16px;
+}
+.login-modal-notify-header {
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    background: #F29F05;
+    color: #FFFFFF;
+}
+.login-modal-notify-message {
+    margin: 5px 15px;
+}
+.login-modal-notify-message span {
+    display: block;
+    line-height: 20px;
+    font-size: 16px;
+}
+.login-modal-notify-footer {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0px;
+}
+.login-modal-notify-close {
+    width: 200px;
+    padding: 5px;
+    background: grey;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+}
+#login-modal-notify-mask {
+    position: fixed;
+    inset: 0px;
+    z-index: 3999;
+    background: #0008;
+}

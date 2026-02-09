@@ -1,0 +1,17 @@
+(function(w,d,s){
+var f=d.querySelector(s), j=d.createElement(s);
+j.async=true;
+j.src=' https://dmp.im-apps.net/sdk/rt.js ';
+j.setAttribute('data-cid', 3929);
+j.setAttribute('data-sid', 26632);
+f.parentNode.insertBefore(j, f);
+})(window,document,'script');(function(d,n){
+let f=d.currentScript||(function(){
+let nl=d.getElementsByTagName(n);
+return nl.item(nl.length - 1);
+}()),j=d.createElement(n);
+j.async=true;
+j.src='https://rt.gsspat.jp/e/trk/lcs.min.js';
+j.setAttribute('data-sid',26632);
+f.after(j);
+})(document, 'script');

@@ -1,0 +1,4708 @@
+@charset "utf-8";
+
+/* -----↓初期化----- */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+address,
+code,
+em,
+strong,
+img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+fieldset,
+legend,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td{
+	margin:0;
+	padding:0;
+	font-weight:inherit;
+	font-size:inherit;
+}
+body{
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size:12px;
+	word-break:break-all;
+	line-height:1.4;
+	color:#333;
+	font-weight:normal;
+	position:relative;
+}
+table{
+	border-collapse:collapse;
+}
+th,
+td{
+	border-spacing:0;
+}
+ul,
+ol,
+li{
+	list-style-type:none;
+}
+a{
+	color:#333;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+img{
+	max-width:100%;
+	height:auto;
+	vertical-align:top;
+	border:none;
+}
+input{
+	vertical-align:middle;
+}
+input,
+textarea{
+	font-size:inherit;
+}
+/* -----↑初期化----- */
+
+
+/* -----↓共通化----- */
+/*clearfix*/
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/*mkThumb*/
+.mkThumb{
+	position:relative;
+	display:block;
+	overflow:hidden;
+}
+.mkThumb:after{
+	content:"";
+	display:block;
+	padding-top:100%;
+}
+.mkThumb img{
+	position:absolute;
+}
+
+.loginBtn{
+	width:300px;
+	margin:0 auto;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#E1E1E1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#E1E1E1);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #999999;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#EB547A;
+}
+
+/*btnEntry/btnLogin/btnConfirm*/
+.btnEntry,
+.btnLogin,
+.btnConfirm{
+	max-width:300px;
+	margin:0 auto;
+}
+.btnEntry a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#fff;
+}
+.btnLogin a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#E1E1E1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#E1E1E1);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #999999;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#EB547A;
+}
+.btnConfirm a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #aaa, #ccc);
+	background: -webkit-gradient(linear, center top, center bottom, from(#aaa), to(#ccc));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#aaa, EndColorStr=#ccc);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #ccc;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#333;
+}
+.btnConcierge{
+	text-align:center;
+	margin:0 10px 10px;
+}
+.btnConcierge a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #ccc;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color:#333;
+/*
+	display:block;
+*/
+	display:inline-block;
+	padding:0 10px;
+}
+/* ↓ 2022/10/01 姫デコのHOWTO内容変更 */
+.btnConcierge a span{
+	background:url(../../img/renew_spgirl/iconConcierge.png) no-repeat 0 50%;
+	background-size:20px 20px;
+	padding-left:25px;
+	display:inline-block;
+}
+/* ↑ 2022/10/01 姫デコのHOWTO内容変更 */
+.btnConcierge.double a{
+	height: auto;
+	line-height:1;
+}
+.btnConcierge.double a span{
+	line-height:20px;
+	padding:5px 0 5px 25px;
+}
+.btnConcierge.double a .title span{
+/*
+	vertical-align:middle;
+*/
+}
+.conciergeComment{
+	text-align:center;
+	font-weight:bold;
+	font-size: 14px;
+	margin-bottom:10px;
+	color:#333;
+	line-height:20px;
+	height:20px;
+}
+/* ↓ 2022/10/01 姫デコのHOWTO内容変更 */
+.conciergeComment span{
+	background:url(../../img/renew_spgirl/iconConcierge.png) no-repeat 0 50%;
+	background-size:20px 20px;
+	padding-left:25px;
+	display:inline-block;
+}
+/* ↑ 2022/10/01 姫デコのHOWTO内容変更 */
+/*pageTop*/
+#pageTop{
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	z-index:10;
+}
+#pageTop a{
+	background-color:rgba(51,51,51,0.7);
+	color:#fff;
+	display:block;
+	text-align:center;
+	width:45px;
+	height:45px;
+	line-height:45px;
+	font-size:24px;
+	border-radius:3px;
+}
+#pageTop a:hover{
+	text-decoration:none;
+}
+/*otherLink*/
+.otherLink{
+}
+.otherLink li{
+}
+.otherLink li.double{
+	float:left;
+	width:50%;
+}
+.otherLink li span{
+	display:block;
+	text-align:center;
+	font-weight: bold;
+
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	line-height:33px;
+	height:33px;
+	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#E1E1E1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#E1E1E1);
+	color:#333;
+}
+.otherLink li a{
+	display:block;
+	text-align:center;
+	font-weight: bold;
+
+	line-height:35px;
+	height:35px;
+	background: -webkit-gradient(linear,left bottom, left top, to(#f9a), from(#f69));
+	background: -moz-linear-gradient( top, #f9a 0%, #f69 100%);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#f9a, EndColorStr=#f69);
+	color: #fff;
+}
+.otherLink li a:hover{
+	text-decoration:none;
+}
+.otherLink li:nth-of-type(n+2) span,
+.otherLink li:nth-of-type(n+2) a{
+	border-left:1px solid #ccc;
+}
+.otherLink li a img{
+	width:15px;
+	margin-right:2px;
+	vertical-align:middle;
+}
+/*sp-dialog*/
+#dialog{
+	padding:10px 10px 10px;
+	text-align: left;
+	background-color: #ffffff;
+	border:1px solid #aaa;
+/*
+	top:10%;
+	left:50%;
+	margin-left: -145px;
+*/
+	top:10px;
+	left:10px;
+	right:10px;
+    position: fixed;
+	z-index:300;
+	display:none;
+/*
+	bottom:10px;
+	height:390px;
+*/
+}
+#dialog-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: center;
+	width: 45px;
+	height: 45px;
+}
+#dialog .prev,
+#dialog .next{
+	top:50%;
+	margin-top:-31px;
+	width:21px;
+	height:63px;
+}
+#dialog .prev[disabled],
+#dialog .next[disabled]{
+	display:none;
+}
+#dialog .prev img,
+#dialog .next img{
+	max-width:100%;
+}
+#dialog .prev{
+	position:absolute;
+	left:0;
+	margin-left:0;
+}
+#dialog .next{
+	position:absolute;
+	right:0;
+	margin-right:0;
+}
+/* ↓ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner{
+    overflow:hidden;
+    margin:0 auto;
+    width: 280px;
+    height: auto;
+}
+/* ↑ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner .pointer{
+	text-align:center;
+	margin-top:5px;
+}
+#dialog .dialogInner .pointer span{
+	border: 1px solid #999;
+	border-radius: 8px;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+}
+#dialog .dialogInner .pointer span.current{
+	background-color:#999;
+}
+#dialog .dialogInner .slides{
+	width:2000px;
+/*
+	margin-top:5px;
+*/
+}
+#dialog .dialogInner .slides:after{
+	display:block;
+	content:"";
+	clear:both;
+}
+#dialog .dialogInner .slides .slide{
+	float:left;
+	width:280px;
+	margin-right:10px;
+	position:relative;
+}
+#dialog .dialogInner .slides .slide .dialogTitle,
+#dialog .dialogInner .slides .slide .description{
+	color:#333;
+	margin-top:10px;
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+}
+#dialog .dialogInner .slides .slide .description{
+	font-size:16px;
+}
+#dialog .dialogInner .slides .slide .dialogTitle span,
+#dialog .dialogInner .slides .slide .description span{
+	color:#f00;
+}
+#dialog .dialogInner .slides .slide .img{
+	margin-top:10px;
+	border:1px solid #aaa;
+}
+#dialog .dialogInner .slides .slide .img img{
+	vertical-align:top;
+	max-width:100%;
+}
+#dialog .dialogInner .slides .slide .btn{
+	margin:20px 10px 12px 10px;
+	float:left;
+}
+#dialog .dialogInner .slides .slide .btn a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	line-height:20px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: 14px;
+	color:#fff;
+	padding:5px 10px;
+/*
+	width:230px;
+*/
+	width:196px;
+	margin:0 auto;
+	text-align:center;
+	display:block;
+}
+#dialog .dialogInner .slides .slide .btn a span{
+	font-size:24px;
+}
+#dialog .dialogInner .slides .slide .btnNext{
+	margin:20px auto 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	line-height:20px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: 14px;
+	color:#fff;
+	padding:5px 10px;
+	width:230px;
+	text-align:center;
+}
+#dialog .dialogInner .slides .slide .btnClose{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	line-height:30px;
+	width:30px;
+	background: -moz-linear-gradient(top, #999, #666);
+	background: -webkit-gradient(linear, center top, center bottom, from(#999), to(#666));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#999, EndColorStr=#666);
+	border:1px solid #999;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: 14px;
+	color:#fff;
+	text-align:center;
+	margin:20px 10px 12px 0;
+	float:right;
+/*
+	position:absolute;
+	left:0;
+	bottom:0;
+*/
+}
+#dialog .dialogInner .slides .slide p.wide{
+    width: 230px;
+    margin: 20px auto;
+    float: none;
+}
+#regFirstLoginDialog .dialogInner .slides .slide p.wide{
+    width: 230px;
+    margin: 20px auto;
+    float: none;
+}
+/* ↓ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner .slides .slide .title{
+	display:grid;
+    align-items:center;
+    font-size:16px;
+	font-weight:bold;
+	background-color:rgba(255,255,255,1.0);
+	line-height:24px;
+	padding:5px 0 15px;
+	width:100%;
+	height:48px;
+	text-align:center;
+}
+/* ↑ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner .slides .slide ul{
+	position:relative;
+}
+#dialog .dialogInner .slides .statisticsAccess ul{
+	background:url(../../img/bgStatisticsAccess2.png) 0 0 no-repeat;
+	background-size:280px;
+	height:264px;
+}
+#dialog .dialogInner .slides .statisticsAccess li{
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute;
+/*
+	left:40px;
+*/
+	color:#EB547A;
+	width:280px;
+	text-align:center;
+}
+#dialog .dialogInner .slides .statisticsAccess .line01{
+	font-size:24px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line02,
+#dialog .dialogInner .slides .statisticsAccess .line03,
+#dialog .dialogInner .slides .statisticsAccess .line04,
+#dialog .dialogInner .slides .statisticsAccess .line05{
+	font-size:28px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line01{
+	top:12px;
+	top:20px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line02{
+	top:52px;
+	top:50px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line03{
+	top:82px;
+	top:80px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line04{
+	top:112px;
+	top:110px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line05{
+	top:142px;
+	top:140px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line img{
+	vertical-align:baseline;
+}
+#dialog .dialogInner .slides .statisticsAccess .line01 img{
+	height:14px;
+	padding:0 3px;
+}
+#dialog .dialogInner .slides .statisticsAccess .line02 img,
+#dialog .dialogInner .slides .statisticsAccess .line03 img,
+#dialog .dialogInner .slides .statisticsAccess .line04 img,
+#dialog .dialogInner .slides .statisticsAccess .line05 img{
+	height:18px;
+	padding:0 5px;
+}
+#dialog .dialogInner .slides .statisticsRanking .title span{
+	color:#EB547A;
+}
+#dialog .dialogInner .slides .statisticsRanking ul{
+/*
+	background:url(../img/bgStatisticsRanking.png) 0 0 no-repeat;
+	background-size:280px;
+	height:244px;
+*/
+	background:url(../../img/bgStatisticsAccess2.png) 0 0 no-repeat;
+	background-size:280px;
+	height:264px;
+}
+/* ↓ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner .slides .statisticsRanking li{
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute;
+	color:#EB547A;
+/*
+	left:40px;
+*/
+	width:280px;
+	text-align:right;
+}
+#dialog .dialogInner .slides .statisticsRanking .line01,
+#dialog .dialogInner .slides .statisticsRanking .line02,
+#dialog .dialogInner .slides .statisticsRanking .line03,
+#dialog .dialogInner .slides .statisticsRanking .line04{
+	font-size:20px;
+}
+/* ↑ 2022/10/01 姫デコのHOWTO内容変更 */
+#dialog .dialogInner .slides .statisticsRanking .line01{
+	top:12px;
+	top:20px;
+}
+#dialog .dialogInner .slides .statisticsRanking .line02{
+	top:52px;
+	top:50px;
+}
+#dialog .dialogInner .slides .statisticsRanking .line03{
+	top:82px;
+	top:80px;
+}
+#dialog .dialogInner .slides .statisticsRanking .line04{
+	top:112px;
+	top:110px;
+}
+#dialog .dialogInner .slides .statisticsRanking .line img{
+	vertical-align:baseline;
+}
+#dialog .dialogInner .slides .statisticsRanking .line01 img,
+#dialog .dialogInner .slides .statisticsRanking .line02 img,
+#dialog .dialogInner .slides .statisticsRanking .line03 img,
+#dialog .dialogInner .slides .statisticsRanking .line04 img{
+	height:18px;
+	padding:0 5px;
+}
+/* -----↑共通化----- */
+
+
+/* -----↓html/body----- */
+html{
+/*
+	max-width:320px;
+	min-height:1000px;
+*/
+}
+/* -----↑html/body----- */
+
+
+/* -----↓bannerApp----- */
+#bannerApp.fixed{
+	background-color:#f0f0f0;
+	width:100%;
+	position:fixed;
+	left:0;
+	bottom:0;
+	z-index:100;
+	border-top:1px solid #ccc;
+}
+#bannerApp p{
+}
+#bannerApp p a{
+}
+/* -----↑bannerApp----- */
+
+
+/* -----↓menuGrobal----- */
+#menuGrobal{
+	position:fixed;
+	left:0;
+	top:0;
+	background-color:#f6f6f6;
+	width:100%;
+	z-index:200;
+	border-bottom:1px solid #eb547a;
+	-webkit-transform: translate3d(0,0,0);
+}
+#menuGrobal #logo h1{
+	float:left;
+}
+#menuGrobal #logo h1 a{
+	display:block;
+	height:37px;
+	padding:6px 0 6px 10px;
+}
+#menuGrobal #logo h1 a img{
+	height:37px;
+}
+#menuGrobal ul{
+	float:right;
+	padding-right:0px;
+}
+#menuGrobal ul li{
+	float:left;
+	font-size:10px;
+	line-height:1;
+}
+#menuGrobal ul li a{
+	display:block;
+	text-align:center;
+	padding:6px 5px 5px;
+	color:#ac2858;
+	position:relative;
+	min-width:4em;
+}
+#menuGrobal ul li a:hover{
+	text-decoration:none;
+}
+#menuGrobal ul li a img{
+	width:25px;
+	padding-bottom:3px;
+}
+#menuGrobal ul li a .count,
+#menuGrobal ul li a .countMax{
+	position:absolute;
+	text-align:center;
+	right:5px;
+	top:1px;
+	color:#fff;
+	font-size:13px;
+	width:18px;
+	height:18px;
+	line-height:18px;
+	background-color:#FF7F00;
+	border-radius:10px;
+	border:1px solid #fff;
+}
+#menuGrobal ul li a .countMax{
+	font-size:10px;
+}
+/* -----↑menuGrobal----- */
+
+
+/* -----↓header----- */
+#header{
+	background-color:#f6f6f6;
+	border-bottom:1px solid #ac2858;
+}
+#header h1{
+	text-align:center;
+	padding:6px 0 6px;
+}
+#header h1 img{
+	height:37px;
+}
+/* -----↑header----- */
+
+
+/* -----↓contents----- */
+.contents{
+	padding:50px 0 0;
+}
+#home .contents{
+
+}
+
+#home #menuLocal .box{
+opacity:0.9;
+}
+
+
+#mypageFront.contents{
+	padding:0;
+	overflow:hidden;
+	background-color:transparent;
+/*
+	margin-top:-58px;
+*/
+}
+#loginBlock.contents,
+#girlEntryList.contents{
+	padding:0;
+}
+.headerBand{
+	background: -webkit-gradient(linear,left bottom, left top, to(#f9a), from(#f69));
+	background: -moz-linear-gradient( top, #f9a 0%, #f69 100%);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#f9a, EndColorStr=#f69);
+	font-weight: bold;
+	font-size : 16px;
+	line-height: 45px;
+	color: #fff;
+	text-align:center;
+	margin-bottom:10px;
+}
+/* -----↑contents----- */
+
+
+/* -----↓profileBlock----- */
+#profileBlock{
+	border-bottom:2px solid #ac2858;
+}
+#profileBlock p{
+	text-align:center;
+	position:relative;
+}
+#profileBlock p span{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	font-weight:bold;
+	line-height:1;
+}
+#profileBlock p .name{
+	top:3px;
+	font-size:15px;
+}
+#profileBlock p .shop{
+	bottom:3px;
+	font-size:11px;
+}
+/* -----↑profileBlock----- */
+
+
+/* -----↓conciergeBlock----- */
+#conciergeBlock{
+	padding:5px 2.5%;
+	background-color:rgba(255,255,255,0.5);
+/*
+	background-color:#fff;
+*/
+	border-bottom:1px solid #ccc;
+	margin-bottom:10px;
+}
+#conciergeBlock a{
+	display:block;
+}
+#conciergeBlock a:hover{
+	text-decoration:none;
+}
+#conciergeBlock .marquee{
+	padding:5px;
+	background-color:#EB547A;
+	border:1px solid #EB547A;
+	border-radius:5px;
+	position:relative;
+	white-space:nowrap;
+	color:#fff;
+}
+#conciergeBlock .marquee:before{
+	content:"";
+	display:block;
+	position:absolute;
+	z-index:1;
+	bottom:-12px;
+	left:48px;
+	width:20px;
+	height:12px;
+	background:url(../../img/renew_spgirl/icon/marqueeArrow.png) 0 0 no-repeat;
+	background-size:20px 12px;
+}
+#conciergeBlock .iconConcierge{
+	float:left;
+	margin:5px 15px 5px 5px;
+	width:40px;
+}
+#conciergeBlock .iconConcierge a{
+	display:block;
+}
+#conciergeBlock .message{
+	overflow:hidden;
+	margin-top:10px;
+	height:30px;
+	line-height:30px;
+}
+#conciergeBlock .message ul{
+	position:relative;
+}
+#conciergeBlock .message ul li{
+	width:100%;
+	display:none;
+}
+#conciergeBlock .message dl dt{
+	float:left;
+	color:#333;
+	padding:0 5px;
+}
+#conciergeBlock .message dl.blog dt{
+	background-color:#ffedcc;
+}
+#conciergeBlock .message dl.schedule dt{
+	background-color:#ccffd4;
+}
+#conciergeBlock .message dl.statics dt{
+	background-color:#ccdeff;
+}
+#conciergeBlock .message dl.blogNeta dt{
+	background-color:#ffccf7;
+}
+#conciergeBlock .message dl dd{
+	overflow:hidden;
+	padding-left:5px;
+	color:#EB547A;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+#conciergeBlock .announce{
+	clear:both;
+	height:20px;
+	line-height:20px;
+	border:1px solid #aaa;
+	background-color:#ddd;
+	padding:5px;
+}
+#conciergeBlock .announce dl dt{
+	float:left;
+	color:#fff;
+	padding:0 5px;
+	background-color:#558ed5;
+	border-radius:3px;
+}
+#conciergeBlock .announce dl dd{
+	overflow:hidden;
+	padding-left:5px;
+	color:#0070c0;
+}
+/* -----↑conciergeBlock----- */
+
+
+/* -----↓menuLocal----- */
+#menuLocal{
+	margin:10px 0 0;
+}
+#menuLocal h2{
+	margin-bottom:10px;
+	line-height:30px;
+	height:30px;
+	font-weight:bold;
+	background-color:rgba(255,255,255,0.5);
+}
+#menuLocal h2 .title{
+	max-width:304px;
+	display:block;
+	padding:0 8px;
+	margin:0 auto;
+}
+#menuLocal h2 span{
+	vertical-align:middle;
+}
+#menuLocal h2 span img{
+	width:20px;
+	padding-right:5px;
+	vertical-align:middle;
+}
+#menuLocal .blogBlock{
+}
+#menuLocal .blogBlock .boxList{
+	margin:0 auto 0;
+	max-width:320px;
+	margin-bottom:10px;
+}
+#menuLocal .blogBlock .boxList .box{
+	float:left;
+	width:96px;
+	margin:0 8px 0;
+}
+/* ↓ 2015/03/31 スケジュール簡単投稿 EXCD */
+#menuLocal .blogBlock .boxList .liner.box {
+	width: 100%;
+	box-sizing: border-box;
+	padding-right: 16px;
+}
+/* ↑ 2015/03/31 スケジュール簡単投稿 EXCD */
+
+#menuLocal .blogBlock .boxList .box:nth-of-type(3n+2){
+	margin-right:0;
+	margin-left:0;
+}
+#menuLocal .blogBlock .boxList .box a{
+	padding:10px 0 5px;
+	display:block;
+	text-align:center;
+	border:1px solid #f0f0f0;
+	box-shadow:0px 2px 2px #888;
+	border-radius:3px;
+	background-color:#fff;
+}
+/* ↓ 2015/03/31 スケジュール簡単投稿 EXCD */
+#menuLocal .blogBlock .boxList .liner.box a {
+	font-size: 18px;
+	font-weight: bold;
+	height: 18px;
+	line-height: 19px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+/* ↑ 2015/03/31 スケジュール簡単投稿 EXCD */
+#menuLocal .blogBlock .boxList .box a:hover{
+	text-decoration:none;
+}
+#menuLocal .blogBlock .boxList .box a ul li{
+	line-height:1;
+}
+#menuLocal .blogBlock .boxList .box a ul .img{
+	margin-bottom:5px;
+}
+#menuLocal .blogBlock .boxList .box a ul .img img{
+	width:30px;
+}
+#menuLocal .blogBlock .boxList .box a ul .title{
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+}
+#menuLocal .statisticsBlock .block{
+	margin:0 auto 0;
+	max-width:320px;
+}
+#menuLocal .statisticsBlock .boxList{
+	float:left;
+	max-width:216px;
+}
+#menuLocal .statisticsBlock .boxList .box{
+	float:left;
+	width:96px;
+	margin:0 8px 10px;
+}
+#menuLocal .statisticsBlock .boxList .box:nth-of-type(2n+1){
+	margin-right:0;
+}
+#menuLocal .statisticsBlock .boxList .box a{
+	padding:9px 0 7px;
+	display:block;
+	text-align:center;
+	border:1px solid #f0f0f0;
+	box-shadow:0px 2px 2px #888;
+	border-radius:3px;
+	background-color:#fff;
+}
+#menuLocal .statisticsBlock .boxList .box a:hover{
+	text-decoration:none;
+}
+#menuLocal .statisticsBlock .boxList .box a ul li{
+	line-height:1;
+}
+#menuLocal .statisticsBlock .boxList .box a ul .title{
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	margin-bottom:2px;
+}
+#menuLocal .statisticsBlock .boxList .box a ul .title img{
+	width:15px;
+	vertical-align:middle;
+	padding-right:2px;
+}
+#menuLocal .statisticsBlock .boxList .box a ul .count{
+}
+#menuLocal .statisticsBlock .scheduleBox{
+	float:right;
+	width:96px;
+	margin:0 8px 10px 0;
+}
+#menuLocal .statisticsBlock .scheduleBox a{
+	display:block;
+	text-align:center;
+	padding:9px 0 7px;
+	border:1px solid #f0f0f0;
+	box-shadow:0px 2px 2px #888;
+	border-radius:3px;
+	background-color:#fff;
+}
+#menuLocal .statisticsBlock .scheduleBox a:hover{
+	text-decoration:none;
+}
+#menuLocal .statisticsBlock .scheduleBox a ul li{
+	line-height:1;
+}
+#menuLocal .statisticsBlock .scheduleBox a ul .img img{
+	width:30px;
+}
+#menuLocal .statisticsBlock .scheduleBox a ul .title{
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+}
+#menuLocal .statisticsBlock .scheduleBox a ul .text{
+	margin-bottom:2px;
+}
+/* -----↑menuLocal----- */
+
+
+/* -----↓statisticsBlock----- */
+#statisticsBlock{
+/*
+	margin:5px 8px 15px;
+	padding:5px;
+	border-radius:5px;
+	background-color:#fff;
+	border:1px solid #f0f0f0;
+	box-shadow:0px 2px 2px #888;
+*/
+}
+#statisticsBlock .description{
+	text-align:center;
+	margin-bottom:10px;
+}
+#statisticsBlock .description a{
+	margin-left:5px;
+	color:#558ED5;
+}
+#statisticsBlock .description a img{
+	vertical-align:middle;
+	margin-right:2px;
+	width:15px;
+}
+/*
+#statisticsBlock .weeklyMission{
+	text-align:center;
+	margin:0 auto 10px;
+	padding:0 5px;
+}
+*/
+#statisticsBlock .weeklyMission{
+	text-align:center;
+    /* ↓ヘブン女の子MPリニューアル２次 2015/03/31 */
+	margin:0 auto 10px auto;
+    /* ↑ヘブン女の子MPリニューアル２次 2015/03/31 */
+	padding:5px 5px;
+	background-image:url(../../img/renew_spgirl/weeklyPointInfo/bg.png);
+    background-size:100% 100%;
+	background-color:#fabe07;
+	border-radius:20px;
+	border:1px solid #fbfb00;
+	/* background: -moz-linear-gradient(top, #ffff3a, #fcbe00 50%);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ffff3a), color-stop(0.5, #fcbe00));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffff3a, EndColorStr=#fcbe00); */
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+#statisticsBlock .weeklyMission .state{
+	float:right;
+	margin-left:5px;
+	width:174px;
+	height:48px;
+}
+#statisticsBlock .weeklyMission .today{
+	overflow:hidden;
+	padding:6px 0 0;
+	font-weight:bold;
+}
+#statisticsBlock .weeklyMission .today li{
+	line-height:21px;
+	height:21px;
+	font-size:14px;
+}
+#statisticsBlock .weeklyMission .today .day{
+}
+#statisticsBlock .weeklyMission .today .date{
+	color:#595959;
+}
+#statisticsBlock .weeklyMission .week{
+	clear:both;
+	margin-top:5px;
+}
+#statisticsBlock .weeklyMission .week li{
+	float:left;
+	width:12%;
+	padding:0 1%;
+}
+#statisticsBlock .weeklyMission .week li:first-child{
+	margin-left:1%;
+}
+#statisticsBlock .weeklyMission .week li:last-child{
+	margin-right:1%;
+}
+#statisticsBlock .weeklyMission .week li dl{
+}
+#statisticsBlock .weeklyMission .week li dl dt{
+	color:#595959;
+	font-weight:bold;
+}
+#statisticsBlock .weeklyMission .week li dl dd{
+}
+#statisticsBlock .btnRanking{
+	text-align:center;
+	margin-bottom:20px;
+}
+#statisticsBlock .btnRanking a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #ccc;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#fff;
+/*
+	display:block;
+	padding:0 10px;
+*/
+	display:inline-block;
+	padding:0 10px;
+	min-width:120px;
+}
+#statisticsBlock .btnRanking a.send{
+	border:1px solid #f69;
+	color:#EB547A;
+	background:#FFE6E6;
+/* ↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+/*	margin-right:10px;*/
+	margin-right:2px;
+/* ↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+}
+#statisticsBlock .btnRanking a img{
+	vertical-align:middle;
+	margin-right:5px;
+	width:30px;
+}
+#statisticsBlock .pager{
+	margin-bottom:10px;
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	font-size:18px;
+	color:#EB547A;
+}
+#statisticsBlock .pager li{
+	float:left;
+	width:50%;
+}
+#statisticsBlock .pager .prev,
+#statisticsBlock .pager .next{
+	width:25%;
+	font-size:20px;
+}
+#statisticsBlock .pager li a{
+	display:block;
+}
+#statisticsBlock .pager li span{
+	display:block;
+	color:#ccc;
+}
+#statisticsBlock .pager li a:hover{
+	text-decoration:none;
+}
+#statisticsBlock .pager .prev a,
+#statisticsBlock .pager .next a{
+}
+#statisticsBlock .pickup{
+	margin:0 10px 20px;
+	padding:5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	border:1px solid #f0f0f0;
+	box-shadow:0px 2px 2px #888;
+}
+#statisticsBlock .pickup li:nth-of-type(n+2){
+	border-top:1px solid #ccc;
+}
+#statisticsBlock .pickup li dl{
+	clear:both;
+	line-height:30px;
+	height:30px;
+	font-size:14px;
+	font-weight:bold;
+}
+#statisticsBlock .pickup li dl dt{
+	float:left;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding:0 8px;
+}
+#statisticsBlock .pickup li dl dt img{
+	vertical-align:middle;
+	margin-right:5px;
+	width:20px;
+}
+#statisticsBlock .pickup li dl dd{
+	width:50%;
+	white-space:nowrap;
+    margin-left:130px;
+	overflow:hidden;
+	text-align:center;
+}
+#statisticsBlock .pickup.pickupWeek li dl dd{
+	text-align:left;
+	width:40%;
+	white-space:nowrap;
+	margin-left:150px;
+}
+#statisticsBlock .monthlyData{
+	margin:0 10px 10px;
+}
+#statisticsBlock .monthlyData .boxList{
+}
+#statisticsBlock .monthlyData .boxList .box{
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:5px;
+}
+#statisticsBlock .monthlyData .boxList .box.title{
+	border:none;
+	padding-top:0;
+}
+#statisticsBlock .monthlyData .boxList .box ul{
+}
+#statisticsBlock .monthlyData .boxList .box ul li{
+	float:left;
+	text-align:center;
+	font-size:12px;
+	line-height:20px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .date{
+	width:30%;
+	background-color:#ccc;
+}
+#statisticsBlock .monthlyData .boxList .box ul .date.sun{
+	color:#f00;
+}
+#statisticsBlock .monthlyData .boxList .box ul .date.sat{
+	color:#558ED5;
+}
+#statisticsBlock .monthlyData .boxList .box.title ul .date{
+	background-color:#fff;
+}
+#statisticsBlock .monthlyData .boxList .box ul .time{
+	width:40%;
+}
+#statisticsBlock .monthlyData .boxList .box ul .new{
+	width:20%;
+}
+#statisticsBlock .monthlyData .boxList .box ul .new span{
+	background-color:#ffd9b2;
+	padding:0 5px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .sum{
+	width:20%;
+}
+#statisticsBlock .monthlyData .boxList .box ul .sum span{
+	background-color:#ffb2b2;
+	padding:0 5px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule{
+	width:30%;
+	text-align:left;
+	position:relative;
+	color:#eb547a;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule span{
+	position:absolute;
+	display:block;
+	padding-left:10px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .little{
+	font-size:10px;
+	line-height:10px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .double{
+	padding:20px 0 21px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrow.png) 0 50% no-repeat;
+	background-size:10px auto;
+	margin-top:-5px;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .triple{
+	padding:30px 0 30px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrow.png) 0 50% no-repeat;
+	background-size:10px auto;
+}
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .txt2{
+	padding:0px 0px 11px 85px;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .txt3{
+	padding:0px 0px 11px 160px;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup1{
+	padding:0px 0px 11px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup2{
+	padding:0px 0px 11px 85px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup3{
+	padding:0px 0px 11px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup1i{
+	padding:0px 0px 11px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 0 15% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup2i{
+	padding:0px 0px 11px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 70% 15% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .aup3i{
+	padding:0px 0px 11px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowUp.png) 90% 15% no-repeat;
+	background-size:10px auto;
+}
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip1{
+	padding:10px 0 21px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip2{
+	padding:10px 0 21px 75px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip3{
+	padding:10px 0 21px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip1i{
+	padding:10px 0 11px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 0 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip2i{
+	padding:10px 0 11px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 70% 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .apip3i{
+	padding:10px 0 11px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsPip.png) 90% 50% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown1{
+	padding:5px 0 0px 10px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown2{
+	padding:5px 0 0px 85px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown3{
+	padding:5px 0 0px 160px;
+	background-size:10px auto;
+	margin-top:-5px;
+	white-space:nowrap;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown1i{
+	padding:5px 0 0px 10px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 0 100% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown2i{
+	padding:5px 0 0px 115px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 70% 100% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .boxList .box ul .schedule .adown3i{
+	padding:5px 0 0px 170px;
+	background:url(../../img/renew_spgirl/iconStatisticsArrowDown.png) 90% 100% no-repeat;
+	background-size:10px auto;
+}
+#statisticsBlock .monthlyData .btn{
+	line-height:45px;
+	height:45px;
+	font-size:14px;
+	text-align:center;
+	background-color:#eee;
+	border:1px solid #ccc;
+	font-weight:bold;
+	clear:both;
+}
+#statisticsBlock .monthlyData .btn a{
+	display:none;
+}
+#statisticsBlock .monthlyData .btn a:hover{
+	text-decoration:none;
+}
+#statisticsBlock .monthlyData .btn a.active{
+	display:block;
+}
+
+/* ↓ヘブン女の子MPリニューアル２次 2015/03/31 */
+#statisticsBlock #weeklyMission #white{
+	background-color: white;
+	margin-top:1.6%;
+	margin-left:1%;
+	width:98%;
+	height:97%;
+}
+
+#statisticsBlock #weeklyMission #yellow{
+    margin-top:1.6%;
+	margin-left:1.5%;
+	width:97%;
+	height:97%;
+	text-align:center;
+	background-color:#fabe07;
+	border-radius:40px;
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#statisticsBlock #weeklyMission #today{
+	font-weight:bold;
+	height:7%;
+	background:url(../../img/renew_spgirl/weeklyPointInfo/ribon.png) no-repeat center top;
+	background-size:280px 29px;
+	color: #FFF;
+	padding: 7px 0 5px 0;
+}
+
+#statisticsBlock #weeklyMission #levelInfo{
+	background-color: #ffff99;
+	border-radius:12px;
+	margin:0px 4% 0px 4%;
+	height:27%;
+}
+
+
+#statisticsBlock #weeklyMission #weekBonus{
+	position:relative;
+	margin:2% auto 0 auto;
+	width:100%;
+	height:8%;
+	font-size: 10px;
+}
+
+#statisticsBlock #weeklyMission #dayInfo {
+/* ↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+/*  margin:3% auto 0 auto;*/
+    margin:2% auto 0 auto;
+/* ↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+    width:90%;
+    height:42%;
+}
+
+#statisticsBlock #weeklyMission #descRules{
+    margin:0% 7% 0 7%;
+    text-align:left;
+    font-size:9px;
+    height:13%;
+}
+
+#statisticsBlock #weeklyMission #levelInfoLeft{
+    float:left;
+	width:30%;
+	height:100%;
+}
+
+#statisticsBlock #levelInfoLeft img{
+	margin:8%;
+	width:85%;
+	height:85%;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight{
+    float:left;
+	width:70%;
+	height:100%;
+    font-size:10px;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight1{
+	width:100%;
+	height:20%;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight2{
+	width:100%;
+	height:20%;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight3{
+	width:100%;
+	height:15%;
+	text-align:right;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight4{
+	width:100%;
+	height:40%;
+    position: relative;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight1 .picMailLevel {
+    margin:4% 4% 2% 0;
+    border-radius: 2px;
+    background: #ff4e2e;
+    color:#FFF;
+	font-size: 12px;
+}
+
+#statisticsBlock #weeklyMission #levelInfoRight #levelInfoRight3 .upPoints {
+    margin-right:4%;
+}
+
+#statisticsBlock #levelInfo #levelInfoRight #levelInfoRight4 .redheart1 {
+    background-image:url(../../img/renew_spgirl/weeklyPointInfo/heartRed.png);
+    background-size:100% 100%;
+    width: 17%;
+    height: 80%;
+    font-weight:bold;
+    line-height:250%;
+    float:left;
+	color: #FFF;
+}
+#statisticsBlock #levelInfo #levelInfoRight #levelInfoRight4 .redheart1 {
+	line-height: 36px;
+}
+@media all and (max-width: 320px) {
+#statisticsBlock #levelInfo #levelInfoRight #levelInfoRight4 .redheart1 {
+	line-height: 30px;
+}
+}
+
+#statisticsBlock #levelInfo #levelInfoRight #levelInfoRight4 .Bar {
+    float:left;
+    right:3%;
+	position: absolute;
+	width: 70%;
+	height:65%;
+	border-radius:6px;
+	background:#000;
+	border: 2px solid #6a1a34;  }
+
+#statisticsBlock #levelInfo #levelInfoRight #levelInfoRight4 .Bar div{
+    height: 100%;
+    width: 0;
+	border-radius:6px;
+	display: block;
+	position: relative;
+	background:#ff0066;
+	border: 0 solid #ff0066; }
+
+#statisticsBlock #weekBonus div{
+    float:left;
+    margin-right:1%;
+}
+
+#statisticsBlock #weekBonus #weekBonus1{
+    margin-top:4%;
+    width:22%;
+	color:rgb(77,15,37);
+	text-align:right;
+}
+
+#statisticsBlock #weekBonus #weekBonus2{
+    margin-top:4%;
+    width:6%;
+    height:60%;
+    background-image:url(../../img/renew_spgirl/weeklyPointInfo/heartRed.png);
+    background-size:100% 100%;
+	color: #FFF;
+	color: #FFF;
+	font-size: 8px;
+}
+#statisticsBlock #weekBonus #weekBonus2 {
+	line-height: 20px;
+}
+@media all and (max-width: 320px) {
+#statisticsBlock #weekBonus #weekBonus2 {
+	line-height: 14px;
+}
+}
+#statisticsBlock #weekBonus .weekBonus3C{
+    width:21%;
+    height:100%;
+	text-align:center;
+}
+
+#statisticsBlock #weekBonus .weekBonus3C .buonusGet{
+	background-color: red;
+	border-radius:2px;
+	color:white;
+	width:100%;
+	height:50%;
+}
+
+#statisticsBlock #weekBonus .weekBonus3C .buonusNotGet{
+	background-color: #f99300;
+	color: #FFF;
+	border-radius:8px;
+	width:100%;
+	height:50%;
+	font-size: 11px;
+}
+
+
+#statisticsBlock #dayInfo div{
+     margin-bottom:5px;
+     float:left;
+     width:25%;
+/*↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+  /*height:48%;*/
+    height: 50%;
+/*↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+}
+
+#statisticsBlock #dayInfo .circle {
+    background-image:url(../../img/renew_spgirl/weeklyPointInfo/maru.png);
+    background-size:100% 100%;
+}
+
+#statisticsBlock #dayInfo .todayCircle {
+    background-image:url(../../img/renew_spgirl/weeklyPointInfo/todayMaru.png);
+    background-size:100% 100%;
+}
+
+#statisticsBlock #dayInfo .sendedMark{
+	background-color: rgb(255,102,153);
+	border-radius:3px;
+	color:black;
+	margin:7% auto 0 auto;
+	width:70%;
+	height:24%;
+	border: 1.5px solid #000000;
+}
+
+#statisticsBlock #dayInfo .notSendedMark{
+	background-color: #bc908f;
+	border-radius:6px;
+	color:white;
+	margin:9% auto 0 auto;
+	width:70%;
+	height:24%;
+}
+#statisticsBlock #dayInfo .notSendedMark{
+	line-height: 20px;
+}
+@media all and (max-width: 320px) {
+#statisticsBlock #dayInfo .notSendedMark{
+	line-height: 16px;
+}
+}
+#statisticsBlock #dayInfo .circle .day{
+    color:rgb(89,89,89);
+    margin:15% auto auto auto;
+	color: #FFF;
+}
+
+#statisticsBlock #dayInfo .todayCircle .day{
+    color:#00b0f6;
+    margin:15% auto auto auto;
+	color: #FF6;
+}
+
+#statisticsBlock #dayInfo .circle img, .todayCircle img{
+    margin:13% 0 0 0;
+    width:22%;
+    height:20%;
+}
+
+#statisticsBlock #dayInfo #bonus10 img{
+    width:100%;
+    height:100%;
+}
+
+/*↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+#statisticsBlock #weeklyMission-large #today{
+    font-weight: bold;
+    height: 3%;
+    background: url(../../img/renew_spgirl/weeklyPointInfo/ribon.png) no-repeat center top;
+    background-size: 280px 29px;
+    color: #FFF;
+    padding: 7px 0 5px 0;
+}
+#statisticsBlock #weeklyMission-large #today li{
+	line-height: 21px;
+	height: 21px;
+	font-size: 14px;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo{
+    background-color: #ffff99;
+    border-radius: 12px;
+    margin: 0px 4% 0px 4%;
+    height: 56%;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock1 .picMailLevel{
+    margin: 2% 4% 2% 4%;
+    border-radius: 2px;
+    background: #ff4e2e;
+    color: #FFF;
+	font-size: 12px;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock2{
+	width: 100%;
+	height: 5%;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock3{
+	width: 92%;
+	height: 4%;
+	text-align: right;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock4{
+	width: 90%;
+	height: 15%;
+	padding-top: 1%;
+	padding-left: 5%;
+	position: relative;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock4 .redheart1{
+    background-image: url(../../img/renew_spgirl/weeklyPointInfo/heartRed.png);
+    background-size: 100% 100%;
+    width: 17%;
+    height: 80%;
+    font-weight: bold;
+    line-height: 250%;
+    float: left;
+	color: #FFF;
+}
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock4 .redheart1 {
+	line-height: 36px;
+}
+@media all and (max-width: 320px) {
+#statisticsBlock #weeklyMission-large #levelInfo  #levelInfoBlock4 .redheart1 {
+	line-height: 30px;
+}
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo  #levelInfoBlock4 .Bar{
+	float: left;
+	right: 3%;
+	position: absolute;
+	width: 70%;
+	height: 65%;
+	border-radius: 6px;
+	background: #000;
+	border: 2px solid #6a1a34;
+}
+
+#statisticsBlock #weeklyMission-large #levelInfo #levelInfoBlock4 .Bar div{
+	height: 100%;
+	width: 0;
+	border-radius:6px;
+	display: block;
+	position: relative;
+	background:#ff0066;
+	border: 0 solid #ff0066;
+}
+
+#statisticsBlock #weeklyMission-large #weekBonus{
+	height: 4.7%;
+	width: 100%;
+	margin: 3% 0 3% 0;
+	font-size: 10px;
+}
+#statisticsBlock #weeklyMission-large #dayInfo{
+	width: 90%;
+	height: 24.8%;
+	margin: 2% auto 0 auto;
+}
+
+#statisticsBlock #weeklyMission-large #descRules{
+	margin: 0% 7% 0 7%;
+	text-align: left;
+	font-size: 9px;
+	height: 5%;
+}
+/*↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+
+/* ↑ヘブン女の子MPリニューアル２次 2015/03/31 */
+/* -----↑statisticsBlock----- */
+
+
+/* -----↓bannerSample----- */
+.bannerSample{
+	padding:0 0 0px;
+	border-top:1px solid #ccc;
+	background-color:#fff;
+}
+.bannerSample p{
+	text-align:center;
+}
+.bannerSample p a{
+	display:block;
+}
+/* -----↑bannerSample----- */
+
+
+/* -----↓mypageFront----- */
+.mypageFront{
+	border:none;
+	width:100%;
+	overflow:hidden;
+	margin-top:50px;
+	vertical-align:bottom;
+}
+/* -----↑mypageFront----- */
+
+
+/* -----↓statisticsRankingBlock----- */
+#statisticsRankingBlock .headerImg{
+	text-align:center;
+	margin-bottom:10px;
+}
+#statisticsRankingBlock .rankArea{
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+	padding:5px 0;
+}
+#statisticsRankingBlock .rankArea dt{
+	display:inline-block;
+	padding-right:5px;
+}
+#statisticsRankingBlock .rankArea dd{
+	font-size:24px;
+	line-height:1;
+	display:inline-block;
+}
+#statisticsRankingBlock .rankArea dd span{
+	font-size:12px;
+	padding:0 5px 0 3px;
+	font-weight:normal;
+}
+#statisticsRankingBlock .rankArea dd img{
+	vertical-align:baseline;
+}
+#statisticsRankingBlock .rankingHeaven,
+#statisticsRankingBlock .rankingShop{
+	margin-bottom:10px;
+}
+#statisticsRankingBlock .rankingShop{
+}
+#statisticsRankingBlock .rankingHeaven dt,
+#statisticsRankingBlock .rankingShop dt{
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	font-weight:bold;
+	font-size:16px;
+	color:#fff;
+}
+#statisticsRankingBlock .rankingHeaven dt{
+	background:#EB547A;
+}
+#statisticsRankingBlock .rankingShop dt{
+	background:#9bbb59;
+}
+#statisticsRankingBlock .rankingHeaven dt span,
+#statisticsRankingBlock .rankingShop dt span{
+	margin-left:10px;
+	font-size:12px;
+}
+#statisticsRankingBlock .rankingHeaven dd,
+#statisticsRankingBlock .rankingShop dd{
+}
+#statisticsRankingBlock .rankingHeaven dd a{
+	color:#EB547A;
+}
+#statisticsRankingBlock .rankingShop dd a{
+	color:#4f6228;
+}
+#statisticsRankingBlock .rankingHeaven dd a,
+#statisticsRankingBlock .rankingShop dd a{
+	display:block;
+	background:url(../../img/renew_spgirl/iconListArrow.png) right center no-repeat;
+	border-bottom:1px solid #ccc;
+	height:45px;
+	line-height:45px;
+	padding:0 25px 0 10px;
+}
+#statisticsRankingBlock .rankingHeaven dd a:hover,
+#statisticsRankingBlock .rankingShop dd a:hover{
+	text-decoration:none;
+}
+#statisticsRankingBlock .rankingHeaven dd a .title,
+#statisticsRankingBlock .rankingShop dd a .title{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#statisticsRankingBlock .rankingHeaven dd a .rank,
+#statisticsRankingBlock .rankingShop dd a .rank{
+/*
+	position:absolute;
+	right:40px;
+	top:0;
+*/
+	float:right;
+	padding-right:10px;
+	padding-left:10px;
+	font-size:20px;
+	font-weight:bold;
+	height:inherit;
+}
+#statisticsRankingBlock .rankingHeaven dd a .rank .iconRankIn,
+#statisticsRankingBlock .rankingHeaven dd a .rank .iconRankOut,
+#statisticsRankingBlock .rankingShop dd a .rank .iconRankIn,
+#statisticsRankingBlock .rankingShop dd a .rank .iconRankOut{
+	vertical-align:middle;
+	height:13px;
+}
+#statisticsRankingBlock .rankingHeaven dd a .rank .iconRankIn,
+#statisticsRankingBlock .rankingShop dd a .rank .iconRankIn{
+	padding-right:5px;
+}
+#statisticsRankingBlock .rankingHeaven dd a .rank span,
+#statisticsRankingBlock .rankingShop dd a .rank span{
+	font-size:12px;
+	padding-left:3px;
+	font-weight:normal;
+}
+#statisticsRankingBlock .rankingHeaven dd a .rank .iconArrow,
+#statisticsRankingBlock .rankingShop dd a .rank .iconArrow{
+	vertical-align:middle;
+	width:12px;
+	padding-left:5px;
+}
+#statisticsRankingBlock .plus{
+	text-align:center;
+	margin:0 10px 10px;
+}
+#statisticsRankingBlock .plus a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	display:inline-block;
+	border:1px solid #f69;
+	color:#EB547A;
+	background:#FFE6E6;
+	padding:0 10px;
+}
+#statisticsRankingBlock .plus a img{
+	width:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+/* -----↑statisticsRankingBlock----- */
+
+
+/* -----↓statisticsRankingSettingBlock----- */
+#statisticsRankingSettingBlock .headerImg{
+	text-align:center;
+	margin-bottom:10px;
+}
+
+#statisticsRankingSettingBlock .rankingGirl{
+	border-top:1px solid #ccc;
+}
+#statisticsRankingSettingBlock .rankingBlog{
+}
+#statisticsRankingSettingBlock .rankingShop{
+}
+
+#statisticsRankingSettingBlock .rankingBlock{
+	padding:10px 10px 10px;
+	border-bottom:1px solid #ccc;
+}
+#statisticsRankingSettingBlock .rankingBlock dl{
+	padding-right:40px;
+	background:url(../../img/renew_spgirl/iconAccordionOff.png) 100% 50% no-repeat;
+	background-size:30px auto;
+}
+#statisticsRankingSettingBlock .rankingBlock dl.active{
+	background:url(../../img/renew_spgirl/iconAccordionOn.png) 100% 50% no-repeat;
+	background-size:30px auto;
+}
+#statisticsRankingSettingBlock .rankingBlock dl dt{
+	font-size:14px;
+	font-weight:bold;
+	color:#EB547A;
+}
+#statisticsRankingSettingBlock .rankingBlock dl dd{
+}
+#statisticsRankingSettingBlock .rankingBlock ul{
+	display:none;
+}
+#statisticsRankingSettingBlock .rankingBlock ul li{
+}
+#statisticsRankingSettingBlock .rankingBlock ul li .btn{
+	height:45px;
+	line-height:45px;
+	float:left;
+	width:45px;
+	text-align:center;
+}
+#statisticsRankingSettingBlock .rankingBlock ul li a{
+	overflow:hidden;
+	display:block;
+	height:45px;
+	line-height:45px;
+}
+#statisticsRankingSettingBlock .rankingBlock ul li a:hover{
+	text-decoration:none;
+}
+
+#statisticsRankingSettingBlock .plus{
+	text-align:center;
+	margin:10px 10px 10px;
+}
+#statisticsRankingSettingBlock .plus a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	display:inline-block;
+	border:1px solid #f69;
+	color:#EB547A;
+	background:#FFE6E6;
+	padding:0 10px;
+}
+#statisticsRankingBlock .plus a img{
+	width:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+/* -----↑statisticsRankingBlock----- */
+
+
+/* -----↓girlEntryList----- */
+#girlEntryList{
+}
+#girlEntryList .pickup{
+	background-color:#c0c0c0;
+	padding:0 0 10px;
+	overflow:hidden;
+}
+#girlEntryList h2{
+	max-width:260px;
+	margin:10px auto 10px;
+	border-left:10px solid #ccc;
+	padding:0 15px;
+	font-size:14px;
+	font-weight:bold;
+}
+#girlEntryList .pickup h2{
+	border-left:10px solid #fff;
+}
+#girlEntryList .btnEntry{
+/*
+	width: 90%;
+	margin:0 auto;
+*/
+	padding:10px 0 20px;
+}
+#girlEntryList .btnEntry a{
+/*
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	color:#fff;
+*/
+/*
+	height: 40px;
+	line-height: 40px;
+*/
+	font-size: 14px;
+}
+#girlEntryList ul li{
+	max-width:300px;
+	margin:10px auto 0;
+	padding-bottom:10px;
+}
+/* -----↑girlEntryList----- */
+
+
+/* -----↓appDescription----- */
+#appDescription{
+}
+#appDescription .pickup{
+	background-color:#c0c0c0;
+	padding:0 0 10px;
+	overflow:hidden;
+}
+#appDescription h2{
+	max-width:260px;
+	margin:10px auto 10px;
+	border-left:10px solid #ccc;
+	padding:0 15px;
+	font-size:14px;
+	font-weight:bold;
+}
+#appDescription .pickup h2{
+	border-left:10px solid #fff;
+}
+#appDescription .btnEntry{
+/*
+	width: 90%;
+	margin:0 5%;
+*/
+	padding:10px 0 20px;
+}
+#appDescription .btnEntry a{
+/*
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	color:#fff;
+*/
+/*
+	height: 40px;
+	line-height: 40px;
+*/
+	font-size: 14px;
+}
+#appDescription ul li{
+	max-width:300px;
+	margin:10px auto 0;
+	padding-bottom:10px;
+}
+/* -----↑appDescription----- */
+
+
+/* -----↓appDownload----- */
+#appDownload{
+/*
+	background-color:#c0c0c0;
+	padding-top:60px;
+*/
+}
+#appDownload #tutorial{
+	position:relative;
+	display:block;
+	margin-bottom:20px;
+}
+#appDownload #tutorial .tutorialInner ul li .dialogTitle,
+#appDownload #tutorial .tutorialInner ul li .description{
+	color:#333;
+	margin-top:10px;
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+}
+#appDownload #tutorial .tutorialInner ul li .description{
+	font-size:16px;
+}
+#appDownload #tutorial .tutorialInner ul li .dialogTitle span,
+#appDownload #tutorial .tutorialInner ul li .description span{
+	color:#f00;
+}
+#appDownload #tutorial .tutorialInner ul li .img{
+	margin-top:10px;
+	border:1px solid #aaa;
+}
+#appDownload #tutorial .tutorialInner ul li .img img{
+	vertical-align:top;
+	max-width:100%;
+}
+#appDownload #tutorial .tutorialInner ul li .btn{
+	margin:15px 0;
+}
+#appDownload #tutorial .tutorialInner ul li .btn a{
+	display:block;
+	color:#fff;
+	border:1px solid #0F2A7C;
+	text-align:center;
+	padding:10px 0;
+	background: -webkit-gradient(linear, center top, center bottom,from(#3ea1ff),to(#108AFF));
+	background: -moz-linear-gradient(center top , #3ea1ff, #108AFF) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#3ea1ff, EndColorStr=#108AFF);
+}
+#appDownload #tutorial .tutorialInner ul li .btn a:hover{
+	text-decoration:none;
+	background: -webkit-gradient(linear, center top, center bottom,from(#108AFF),to(#3ea1ff));
+	background: -moz-linear-gradient(center top , #108AFF, #3ea1ff) repeat scroll 0 0 transparent;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#108AFF, EndColorStr=#3ea1ff);
+}
+#appDownload #tutorial .tutorialInner ul li .btn a span{
+	font-size:24px;
+}
+#appDownload #tutorial .prev,
+#appDownload #tutorial .next{
+	top:50%;
+	margin-top:-31px;
+	width:21px;
+	height:63px;
+}
+#appDownload #tutorial .prev[disabled],
+#appDownload #tutorial .next[disabled]{
+	display:none;
+}
+#appDownload #tutorial .prev img,
+#appDownload #tutorial .next img{
+	max-width:100%;
+}
+#appDownload #tutorial .prev{
+	position:absolute;
+	left:0;
+	margin-left:0;
+}
+#appDownload #tutorial .next{
+	position:absolute;
+	right:0;
+	margin-right:0;
+}
+#appDownload #tutorial .pointer{
+	text-align:center;
+	margin-top:5px;
+}
+#appDownload #tutorial .pointer span{
+	border: 1px solid #999;
+	border-radius: 8px;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+}
+#appDownload #tutorial .pointer span.current{
+	background-color:#999;
+}
+
+#appDownload #tutorial .tutorialInner{
+	width:232px;
+	margin:0 auto;
+	overflow:hidden;
+}
+#appDownload #tutorial .tutorialInner ul{
+	width:2000px;
+}
+#appDownload #tutorial .tutorialInner ul li{
+	width:232px;
+	float:left;
+	margin-right:10px;
+}
+#appDownload #tutorial .tutorialInner ul li.li05{
+	padding-top:50px;
+}
+#appDownload #tutorial .tutorialInner ul li.li01 .dialogTitle{
+	padding:20px 0;
+}
+#appDownload #tutorial .tutorialInner ul li.li01 .description{
+	padding:20px 0;
+}
+#appDownload #tutorial .tutorialInner ul li.li02 .img{
+	overflow:hidden;
+	position:relative;
+	height:230px;
+}
+#appDownload #tutorial .tutorialInner ul li.li02 .img .scroll{
+	position:absolute;
+	left:0;
+	top:0;
+	margin-top:0;
+	visibility:visible;
+	animation:anime1 5s ease 0s normal none infinite;
+	-webkit-animation:anime1 5s ease infinite;
+}
+@keyframes anime1{
+0%{
+	margin-top:0;
+	visibility:visible;
+}
+85%{
+	margin-top:-850px;
+	visibility:visible;
+}
+90%{
+	margin-top:-850px;
+	visibility:hidden;
+}
+95%{
+	margin-top:0;
+	visibility:hidden;
+}
+100%{
+	margin-top:0;
+	visibility:visible;
+}
+}
+@-webkit-keyframes anime1{
+0%{
+	margin-top:0;
+	visibility:visible;
+}
+85%{
+	margin-top:-850px;
+	visibility:visible;
+}
+90%{
+	margin-top:-850px;
+	visibility:hidden;
+}
+95%{
+	margin-top:0;
+	visibility:hidden;
+}
+100%{
+	margin-top:0;
+	visibility:visible;
+}
+}
+#appDownload .btnEntry{
+	padding:5px 0 5px;
+/*
+	width: 90%;
+	margin:0 5%;
+*/
+}
+#appDownload .btnEntry a{
+/*
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+	color:#fff;
+*/
+/*
+	height: 40px;
+	line-height: 40px;
+*/
+	font-size: 14px;
+}
+#appDownload .helpLink{
+	margin:10px 5% 0;
+	text-align:center;
+}
+#appDownload .helpLink a{
+	font-size:16px;
+	line-height:35px;
+	height:35px;
+	display:block;
+	font-weight:bold;
+}
+#appDownload .helpLink a:hover{
+	text-decoration:none;
+}
+#appDownload .helpLink a img{
+	vertical-align:middle;
+	margin-right:2px;
+	width:20px;
+}
+/* -----↑appDownload----- */
+
+
+/* -----↓footergirlsmanager----- */
+.footergirls{
+	width:25%;
+}
+.footergirlsmanager{
+	background: -webkit-gradient(linear,left bottom, left top, to(#f1a9cd), from(#ffb3d9));
+	background: -moz-linear-gradient( top, #f1a9cd 0%, #f9afd4 100%);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#f1a9cd, EndColorStr=#ffb3d9);
+	display: block;
+	float: left;
+	height: auto;
+	width: 50%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+	display: block;
+	height: 30px;
+	color: #FFF;
+	display: block;
+	font-size: 14px;
+	height: 30px;
+	line-height: 2.2em;
+	text-align: center;
+	width: 25%;
+	-moz-box-sizing: border-box;
+}
+.footergirlsmanager span{
+	color:#333;
+}
+/* -----↑footergirlsmanager----- */
+
+
+/* -----↓loginBlock----- */
+#loginBlock{
+	margin-bottom:10px;
+}
+#loginBlock .headerBand{
+	margin-bottom:0;
+}
+#loginBlock .welcome{
+	margin-bottom:10px;
+	font-size:14px;
+	text-align:center;
+	color: #f69;
+}
+#loginBlock .titleBand{
+	background-color:#f00;
+	font-weight: bold;
+	font-size : 14px;
+	line-height: 30px;
+	color: #fff;
+	text-align:center;
+	margin-bottom:10px;
+	border-top:1px solid #fff;
+}
+#loginBlock form{
+	max-width:320px;
+	margin:0 auto;
+}
+#loginBlock form ul li.id,
+#loginBlock form ul li.pass{
+	background-color:#eee;
+	padding:10px;
+}
+#loginBlock form ul li.pass{
+	padding-top:0;
+}
+#loginBlock form ul li.id input,
+#loginBlock form ul li.pass input{
+	font-size:14px;
+	border:1px solid #ccc;
+	padding:0 3px;
+	line-height:14px;
+	height:35px;
+	width:100%;
+	vertical-align:top;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+#loginBlock form ul li.loginAuto{
+	line-height:30px;
+	font-size:14px;
+	margin:10px 0;
+	text-align:center;
+}
+#loginBlock form ul li.loginAuto label:nth-of-type(n+2){
+	margin-left:10px;
+}
+#loginBlock form ul li.loginAuto label input{
+	vertical-align:middle;
+	margin:0 3px 0 0;
+}
+#loginBlock form ul li.btnLogin,
+#loginBlock form ul li.btnConfirm{
+	margin:10px auto;
+}
+#loginBlock form ul li.btnLogin a{
+}
+#loginBlock form ul li.btnConfirm a{
+}
+#loginBlock form ul li.textLink a{
+	line-height:30px;
+	font-size:14px;
+	margin:10px 0;
+	text-align:center;
+	text-decoration:none;
+	display:block;
+	font-weight:bold;
+	color:#0070C0;
+}
+#loginBlock form ul li.text{
+	font-size:10px;
+	padding:0 10px;
+}
+/* -----↑loginBlock----- */
+
+
+/* -----↓messageBlock----- */
+#messageBlock{
+	margin-bottom:10px;
+}
+#messageBlock .setting{
+	text-align:right;
+}
+#messageBlock .setting li{
+	display:inline-block;
+	line-height:25px;
+	height:25px;
+	margin-right:10px;
+}
+#messageBlock .setting li a{
+}
+#messageBlock .setting li a img{
+	width:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+#messageBlock .setting li a span{
+	vertical-align:middle;
+}
+#messageBlock .otherLink{
+	font-size:16px;
+}
+#messageBlock .otherLink li{
+	float:left;
+	width:50%;
+}
+#messageBlock .otherLink li span{
+	height:43px;
+	line-height:43px;
+}
+#messageBlock .otherLink li.spam{
+	font-size:16px;
+	float:left;
+	width:100%;
+	height:43px;
+	line-height:43px;
+}
+#messageBlock .otherLink li a{
+	height:45px;
+	line-height:45px;
+}
+#messageBlock .mailList{
+	clear:both;
+}
+#messageBlock .mailList li{
+	float:left;
+	width:50%;
+}
+#messageBlock .mailList li a{
+	display:block;
+	text-align:center;
+	line-height:45px;
+	height:45px;
+	color:#333;
+	background-color:#ccc;
+	font-size:18px;
+	font-weight:bold;
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
+}
+#messageBlock .mailList li a:hover{
+	text-decoration:none;
+}
+#messageBlock .mailList li.active a{
+	color:#eb547a;
+	background-color:#FFE6E6;
+}
+#messageBlock .mailList li.receive a{
+	border-right:1px solid #333;
+}
+#messageBlock .messageBox{
+}
+#messageBlock .messageBox .box{
+	border-bottom:1px solid #ccc;
+}
+/*
+#messageBlock .messageBox .box p{
+	line-height:45px;
+	height:45px;
+	width:45px;
+	text-align:center;
+	float:left;
+}
+*/
+#messageBlock .messageBox .box a{
+	overflow:hidden;
+	display:block;
+	padding:10px 10px 0 10px;
+}
+#messageBlock .messageBox .box a:hover{
+	text-decoration:none;
+}
+#messageBlock .messageBox .box a ul{
+}
+#messageBlock .messageBox .box a ul li{
+	clear:both;
+	height:20px;
+	line-height:20px;
+	margin-bottom:5px;
+	position:relative;
+}
+#messageBlock .messageBox .box a ul li .title{
+	padding-right:4em;
+	color:#558ED5;
+	font-size:16px;
+	display:block;
+}
+#messageBlock .messageBox .box a ul li .date{
+	position:absolute;
+	right:0;
+	top:0;
+	color:#ccc;
+}
+#messageBlock .messageBox .box a ul li .text{
+	display:block;
+	padding-right:3em;
+}
+#messageBlock .messageBox .box a ul li .new{
+	position:absolute;
+	right:0;
+	top:0;
+	color:#eb547a;
+}
+#messageBlock font{
+	padding:10px 10px !important;
+}
+/* -----↑footergirlsmanager----- */
+
+
+/* -----↓etceteraList----- */
+#etceteraList .list{
+	border-top:1px solid #ccc;
+	margin-top:10px;
+	margin-bottom:20px;
+}
+#etceteraList .list li{
+	height:45px;
+	line-height:45px;
+	font-weight:bold;
+	font-size:16px;
+}
+#etceteraList .list li a{
+	color:#EB547A;
+	display:block;
+	background:url(../../img/renew_spgirl/iconListArrow.png) right center no-repeat;
+	border-bottom:1px solid #ccc;
+	height:45px;
+	line-height:45px;
+	padding:0 100px 0 10px;
+	position:relative;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#etceteraList .list li a:hover{
+	text-decoration:none;
+}
+#etceteraList .btnConfirm{
+/*
+	max-width:320px;
+*/
+	margin-bottom:20px;
+}
+#etceteraList .btnConfirm a{
+}
+/* -----↑etceteraList----- */
+
+
+/* -----↓blogList----- */
+#blogList .description{
+	text-align:center;
+	font-size:16px;
+	line-height:25px;
+	height:25px;
+	margin-bottom:10px;
+}
+#blogList .description a{
+	color:#558ED5;
+}
+#blogList .description a:nth-of-type(n+2){
+	margin-left:10px;
+}
+#blogList .description a img{
+	vertical-align:middle;
+	margin-right:2px;
+	width:15px;
+}
+#blogList .description a span{
+	vertical-align:middle;
+}
+#blogList .send{
+	margin:0 10px 10px;
+}
+#blogList .send a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color:#EB547A;
+	display:block;
+	background-color:#FFE6E6;
+	width:250px;
+	margin:0 auto;
+}
+#blogList .send a img{
+	width:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+#blogList .send a span{
+	vertical-align:middle;
+}
+#blogList h3{
+	height:35px;
+	line-height:35px;
+	padding:0 10px;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	background:#EB547A;
+	position:relative;
+}
+#blogList h3 a{
+	position:absolute;
+	right:10px;
+	top:5px;
+	display:inline-block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 23px;
+	line-height: 23px;
+	font-size: 12px;
+	padding:0 10px;
+	color:#EB547A;
+	background-color:#FFE6E6;
+}
+#blogList .boxList .box{
+	border-bottom:1px solid #ccc;
+}
+#blogList .boxList .box .btn{
+	height:75px;
+	line-height:75px;
+	float:left;
+	width:45px;
+	text-align:center;
+}
+#blogList .boxList .box a{
+	overflow:hidden;
+	display:block;
+}
+#blogList .boxList .box a:hover{
+	text-decoration:none;
+}
+#blogList .boxList .box a .img{
+	float:right;
+	width:75px;
+	height:75px;
+	overflow:hidden;
+}
+#blogList .boxList .box a ul{
+	overflow:hidden;
+	padding:5px 0;
+}
+#blogList .boxList .box a ul li{
+	line-height:20px;
+	height:20px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#blogList .boxList .box a ul .date{
+}
+#blogList .boxList .box a ul .name{
+}
+#blogList .boxList .box a ul .title{
+	line-height:25px;
+	height:25px;
+	color:#558ED5;
+	font-size:14px;
+}
+#blogList .otherLink{
+	margin-bottom:5px;
+}
+#blogList .otherLink li{
+/* ↓ H2202_写メ日記リール対応 2024/10/01 @EXCEED */	
+/*	width:50%; */
+	width:100%;
+/* ↑ H2202_写メ日記リール対応 2024/10/01 @EXCEED */
+	float:left;
+}
+#blogList .pager{
+	padding:5px 0;
+}
+#blogList .pager li{
+	float:left;
+	line-height:45px;
+	height:45px;
+	text-align:center;
+}
+#blogList .pager li.disabled{
+	visibility:hidden;
+}
+#blogList .pager li.first{
+	width:20%;
+}
+#blogList .pager li.prev{
+	width:30%;
+}
+#blogList .pager li.next{
+	width:30%;
+}
+#blogList .pager li.last{
+	width:20%;
+}
+#blogList .pager li a{
+	display:block;
+}
+#blogList .pager li a:hover{
+	text-decoration:none;
+}
+#blogList .pager li.first a{
+	background: -webkit-gradient(linear,left bottom, left top, to(#f9a), from(#f69));
+	background: -moz-linear-gradient( top, #f9a 0%, #f69 100%);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#f9a, EndColorStr=#f69);
+}
+#blogList .pager li.prev a{
+	margin:0 2.5px 0 5px;
+	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#E1E1E1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#E1E1E1);
+}
+#blogList .pager li.next a{
+	margin:0 5px 0 2.5px;
+	background: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background: -webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#E1E1E1));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#E1E1E1);
+}
+#blogList .pager li.last a{
+	background: -webkit-gradient(linear,left bottom, left top, to(#f9a), from(#f69));
+	background: -moz-linear-gradient( top, #f9a 0%, #f69 100%);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#f9a, EndColorStr=#f69);
+}
+#blogList .pager li a img{
+	vertical-align:middle;
+	padding:0 5px;
+}
+/* -----↑blogList----- */
+
+
+/* -----↓blogPhotoGalleryList----- */
+#blogPhotoGalleryList .description{
+	text-align:center;
+	margin-bottom:10px;
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+}
+#blogPhotoGalleryList .description span{
+	vertical-align:middle;
+}
+#blogPhotoGalleryList .description img{
+	margin:0 2px;
+	width:15px;
+	vertical-align:middle;
+}
+#blogPhotoGalleryList h3{
+	height:35px;
+	line-height:35px;
+	padding:0 10px;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	background:#EB547A;
+}
+#blogPhotoGalleryList dd{
+	height:45px;
+	line-height:45px;
+	font-weight:bold;
+	font-size:16px;
+}
+#blogPhotoGalleryList a dd{
+	color:#EB547A;
+	display:block;
+/*	↓ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+/*	background:url(../img/renew_spgirl/iconListArrow.png) right center no-repeat; */
+	background:url(../../img/renew_spgirl/iconListArrow.png) right center no-repeat;
+/*	↑ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+	border-bottom:1px solid #ccc;
+	height:45px;
+	line-height:45px;
+	padding:0 30px 0 10px;
+	position:relative;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	text-decoration:none;
+}
+#blogPhotoGalleryList .otherLink{
+	margin-bottom:5px;
+}
+#blogPhotoGalleryList .otherLink li{
+	width:50%;
+	float:left;
+}
+#blogPhotoGalleryList dl a{
+	text-decoration:none;
+}
+/* -----↑blogPhotoGalleryList----- */
+
+
+/* -----↓blogNetaList----- */
+#blogNetaList .description{
+	text-align:center;
+	margin-bottom:10px;
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+}
+#blogNetaList .description span{
+	vertical-align:middle;
+}
+#blogNetaList .description img{
+	margin:0 2px;
+	width:15px;
+	vertical-align:middle;
+}
+#blogNetaList h3{
+	height:35px;
+	line-height:35px;
+	padding:0 10px;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	background:#EB547A;
+}
+#blogNetaList ul{
+/*
+	font-size:16px;
+*/
+}
+#blogNetaList a ul{
+	color:#EB547A;
+	display:block;
+/*	↓ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+/*	background:url(../img/iconListArrow.png) right center no-repeat; */
+	background:url(../../img/renew_spgirl/iconListArrow.png) right center no-repeat;
+/*	↑ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+	border-bottom:1px solid #ccc;
+	padding:10px 100px 10px 10px;
+	position:relative;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#blogNetaList a ul:hover{
+	text-decoration:none;
+}
+#blogNetaList dl a{
+	text-decoration:none;
+}
+#blogNetaList dl a ul li{
+	display:block;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#blogNetaList dl a ul li.title{
+	color:#333;
+}
+#blogNetaList dl a ul li.neta{
+	color:#0070C0;
+}
+#blogNetaList dl a ul li.name{
+	color:#EB547A;
+}
+#blogNetaList .otherLink{
+	margin-bottom:5px;
+}
+#blogNetaList .otherLink li{
+/* ↓ H2202_写メ日記リール対応 2024/10/01 @EXCEED */
+/*	width:50%; */
+	width:100%;
+/* ↑ H2202_写メ日記リール対応 2024/10/01 @EXCEED */
+	float:left;
+}
+/* -----↑blogNetaList----- */
+
+
+/* -----↓invite----- */
+#invite .qr{
+	text-align:center;
+	color:#EB547A;
+	margin-top:20px;
+	font-size:14px;
+}
+#invite .qr img{
+	width:200px;
+    /* ↓ QR表示対応 @SC 2024/04/16 */
+	/* margin-top: 10px; */
+	/* ↑ QR表示対応 @SC 2024/04/16 */
+}
+/* -----↑invite----- */
+
+
+/* -----↓changeProfile----- */
+#changeProfile dl{
+	margin:0 auto 10px;
+}
+#changeProfile dl dt{
+	font-size:18px;
+	line-height:40px;
+	height:40px;
+	font-weight:bold;
+	margin:0 10px;
+}
+#changeProfile dl dt img{
+	width:30px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+#changeProfile dl dd{
+	text-align:center;
+	margin-bottom:10px;
+}
+#changeProfile dl dd p{
+	text-align:left;
+	margin-bottom:10px;
+	margin-left:20px;
+}
+#changeProfile dl dd.half{
+}
+#changeProfile dl dd a:nth-of-type(n+2){
+	margin-left:10px;
+}
+#changeProfile dl dd a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#EB547A;
+	background-color:#FFE6E6;
+	display:inline-block;
+	padding:0 10px;
+	width:230px;
+}
+#changeProfile dl dd.half a{
+	width:100px;
+}
+#changeProfile p.appLink{
+	margin-bottom:10px;
+	margin-top:20px;
+	text-align:center;
+}
+#changeProfile p.appLink a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	line-height:20px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: 14px;
+	color:#fff;
+	display:inline-block;
+	padding:5px 10px;
+	width:230px;
+}
+#changeProfile .otherLink{
+/*
+	border-top:1px solid #333;
+*/
+	margin-top:20px;
+}
+/* -----↑changeProfile----- */
+
+
+/* -----↓blogConciergeBlock----- */
+#blogConciergeBlock .profileBlock{
+	background-color:#cff;
+}
+#blogConciergeBlock .profileBlock a{
+	display:block;
+	padding:10px;
+}
+#blogConciergeBlock .profileBlock a:hover{
+	text-decoration:none;
+}
+#blogConciergeBlock .profileBlock a .img{
+	float:left;
+	width:40px;
+	margin-right:10px;
+}
+#blogConciergeBlock .profileBlock a .title{
+	font-weight:bold;
+	overflow:hidden;
+}
+#blogConciergeBlock .profileImgBlock{
+	position:relative;
+}
+#blogConciergeBlock .profileImgBlock a{
+	display:block;
+	padding:10px;
+	width:100%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color:rgba(255,255,255,0.8);
+}
+#blogConciergeBlock .profileImgBlock a:hover{
+	text-decoration:none;
+}
+#blogConciergeBlock .profileImgBlock a .img{
+	float:left;
+	width:40px;
+	margin-right:10px;
+}
+#blogConciergeBlock .profileImgBlock a ul{
+	overflow:hidden;
+	line-height:20px;
+}
+#blogConciergeBlock .profileImgBlock a ul .title{
+	font-weight:bold;
+}
+#blogConciergeBlock .profileImgBlock a ul .text{
+	font-size:10px;
+}
+#blogConciergeBlock .menuConcierge{
+	margin-bottom:10px;
+	border-top:1px solid #e3e3e0;
+	border-bottom:1px solid #e3e3e0;
+}
+#blogConciergeBlock .menuConcierge li{
+	float:left;
+	height:40px;
+	line-height:40px;
+	margin-left:10px;
+}
+#blogConciergeBlock .menuConcierge li:nth-of-type(n+2){
+}
+#blogConciergeBlock .menuConcierge li.movie{
+	margin-right:10px;
+	float:right;
+}
+#blogConciergeBlock .menuConcierge li a{
+	display:block;
+	text-align:center;
+	color:#EB547A;
+	font-weight:bold;
+	padding:0 10px;
+}
+#blogConciergeBlock .menuConcierge li a:hover{
+	text-decoration:none;
+}
+#blogConciergeBlock .menuConcierge li.movie a{
+	margin:5px 0;
+	height:28px;
+	line-height:28px;
+	width:70px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	background-color:#FFE6E6;
+}
+#blogConciergeBlock .pager{
+	margin:0 10px 10px;
+}
+#blogConciergeBlock .pager li{
+	float:left;
+	height:40px;
+	line-height:40px;
+	width:40%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border-top:1px solid #e3e3e0;
+	border-bottom:1px solid #e3e3e0;
+}
+#blogConciergeBlock .pager li.prev{
+	-webkit-border-radius:5px 0 0 5px;
+	-moz-border-radius:5px 0 0 5px;
+	border-radius:5px 0 0 5px;
+	border-left:1px solid #e3e3e0;
+}
+#blogConciergeBlock .pager li.list{
+	width:20%;
+}
+#blogConciergeBlock .pager li.next{
+	-webkit-border-radius:0 5px 5px 0;
+	-moz-border-radius:0 5px 5px 0;
+	border-radius:0 5px 5px 0;
+	border-right:1px solid #e3e3e0;
+}
+#blogConciergeBlock .pager li.disabled{
+	background-color:#f0f0f0;
+}
+#blogConciergeBlock .pager li a,
+#blogConciergeBlock .pager li span{
+	display:block;
+	text-align:center;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+#blogConciergeBlock .pager li a:hover{
+	text-decoration:none;
+}
+#blogConciergeBlock .pager li:nth-of-type(n+2) a,
+#blogConciergeBlock .pager li:nth-of-type(n+2) span{
+	border-left:1px solid #e3e3e0;
+}
+#blogConciergeBlock .pager li.disabled a,
+#blogConciergeBlock .pager li.disabled span{
+	color:#ccc;
+}
+#blogConciergeBlock .pager li a img,
+#blogConciergeBlock .pager li span img{
+	vertical-align:middle;
+	padding:0 5px;
+}
+#blogConciergeBlock .blogSingle{
+	clear:both;
+	margin:0 10px 10px;
+}
+#blogConciergeBlock .blogSingle article{
+	padding:10px 10px 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	border-top:1px solid #e3e3e0;
+	border-left:1px solid #e3e3e0;
+	border-right:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogSingle article header .time{
+	text-align:right;
+	margin-bottom:10px;
+}
+#blogConciergeBlock .blogSingle article header h2{
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+#blogConciergeBlock .blogSingle article header dl{
+	margin-bottom:20px;
+}
+#blogConciergeBlock .blogSingle article header dt{
+	float:left;
+}
+#blogConciergeBlock .blogSingle article header dd{
+	overflow:hidden;
+}
+#blogConciergeBlock .blogSingle article header dd a{
+	color:#EB547A;
+}
+#blogConciergeBlock .blogSingle article .text{
+	font-size:14px;
+	padding-bottom:20px;
+}
+#blogConciergeBlock .blogSingle .pager{
+	margin:0;
+}
+#blogConciergeBlock .blogSingle .pager li.prev{
+	-webkit-border-radius:0 0 0 5px;
+	-moz-border-radius:0 0 0 5px;
+	border-radius:0 0 0 5px;
+}
+#blogConciergeBlock .blogSingle .pager li.next{
+	-webkit-border-radius:0 0 5px 0;
+	-moz-border-radius:0 0 5px 0;
+	border-radius:0 0 5px 0;
+}
+#blogConciergeBlock .blogList{
+	clear:both;
+	margin:0 10px 10px;
+}
+#blogConciergeBlock .blogList h2{
+	padding:10px 10px 5px;
+	line-height:15px;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	background-color:#666;
+	color:#fff;
+}
+#blogConciergeBlock .blogList .boxList{
+	border-left:1px solid #e3e3e0;
+	border-right:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogList .boxList .box{
+}
+#blogConciergeBlock .blogList .boxList .box a{
+	display:block;
+	border-bottom:1px solid #e3e3e0;
+	position:relative;
+	text-decoration:none;
+}
+#blogConciergeBlock .blogList .boxList .box a .img{
+	float:right;
+	width:100px;
+}
+#blogConciergeBlock .blogList .boxList .box a .img img{
+}
+#blogConciergeBlock .blogList .boxList .box a ul{
+	overflow:hidden;
+	padding:10px 10px 25px 10px;
+	min-height:65px;
+}
+#blogConciergeBlock .blogList .boxList .box a ul .title{
+	font-size:16px;
+	margin-bottom:5px;
+	font-weight:bold;
+	line-height:20px;
+}
+#blogConciergeBlock .blogList .boxList .box a ul .date{
+	position:absolute;
+	bottom:10px;
+	left:10px;
+	line-height:15px;
+}
+#blogConciergeBlock .blogList .boxList .box a dl{
+	position:relative;
+}
+#blogConciergeBlock .blogList .boxList .box a dl dt{
+	height:45px;
+	line-height:45px;
+	padding:0 50px 0 10px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+#blogConciergeBlock .blogList .boxList .box a dl dd{
+	position:absolute;
+	right:10px;
+	top:0;
+	height:45px;
+	line-height:45px;
+}
+#blogConciergeBlock .blogList .now{
+	border-left:1px solid #e3e3e0;
+	border-right:1px solid #e3e3e0;
+	padding:10px 10px;
+	text-align:center;
+}
+#blogConciergeBlock .blogList .pagerBlogList{
+	margin-bottom:10px;
+}
+#blogConciergeBlock .blogList .pagerBlogList li{
+	float:left;
+	height:40px;
+	line-height:40px;
+	width:20%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border-top:1px solid #e3e3e0;
+	border-bottom:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogList .pagerBlogList li.first{
+	-webkit-border-radius:0 0 0 5px;
+	-moz-border-radius:0 0 0 5px;
+	border-radius:0 0 0 5px;
+	border-left:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogList .pagerBlogList li.prev,
+#blogConciergeBlock .blogList .pagerBlogList li.next{
+	width:30%;
+}
+#blogConciergeBlock .blogList .pagerBlogList li.last{
+	-webkit-border-radius:0 0 5px 0;
+	-moz-border-radius:0 0 5px 0;
+	border-radius:0 0 5px 0;
+	border-right:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogList .pagerBlogList li.disabled{
+	background-color:#f0f0f0;
+	color:#ccc;
+}
+#blogConciergeBlock .blogList .pagerBlogList li a,
+#blogConciergeBlock .blogList .pagerBlogList li span{
+	display:block;
+	text-align:center;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	text-decoration:none;
+}
+#blogConciergeBlock .blogList .pagerBlogList li:nth-of-type(n+2) a,
+#blogConciergeBlock .blogList .pagerBlogList li:nth-of-type(n+2) span{
+	border-left:1px solid #e3e3e0;
+}
+#blogConciergeBlock .blogList .pagerBlogList li a img,
+#blogConciergeBlock .blogList .pagerBlogList li span img{
+	vertical-align:middle;
+	padding:0 5px;
+}
+#blogConciergeBlock .filter{
+	border-top:1px solid #e3e3e0;
+	margin-bottom:20px;
+}
+#blogConciergeBlock .filter li{
+	border-bottom:1px solid #e3e3e0;
+}
+#blogConciergeBlock .filter li a{
+	display:block;
+/*	↓ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+/*	background:url(../img/iconListArrow.png) no-repeat right center; */
+	background:url(../../img/renew_spgirl/iconListArrow.png) no-repeat right center;
+/*	↑ 2015/11/10 @ EXCEED 女の子MPエラー対応 */
+	text-decoration:none;
+	line-height:35px;
+	height:35px;
+	font-size:14px;
+	font-weight:bold;
+	padding:0 10px;
+}
+#blogConciergeBlock .filter li a img{
+	vertical-align:middle;
+	padding:0 5px;
+	width:20px;
+}
+#blogConciergeBlock .blogSearch{
+	padding:0 10px;
+	margin-bottom:10px;
+}
+#blogConciergeBlock .blogSearch dt{
+	font-weight:bold;
+	margin-bottom:5px;
+}
+#blogConciergeBlock .blogSearch dd{
+}
+#blogConciergeBlock .blogSearch dd form{
+}
+#blogConciergeBlock .blogSearch dd form input{
+	font-size:14px;
+	border:1px solid #e3e3e0;
+	padding:0 3px 0 28px;
+	line-height:14px;
+	height:35px;
+	width:80%;
+	vertical-align:top;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float:left;
+	display:block;
+	-webkit-border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
+	background:url(../img/iconBlogSearch.png) no-repeat 5px 50%;
+	background-size:20px auto;
+}
+#blogConciergeBlock .blogSearch dd form a{
+	display:block;
+	text-decoration:none;
+	background-color:#f0f0f0;
+	font-weight:bold;
+	width:20%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	line-height:35px;
+	height:35px;
+	overflow:hidden;
+	border-top:1px solid #e3e3e0;
+	border-bottom:1px solid #e3e3e0;
+	border-right:1px solid #e3e3e0;
+	-webkit-border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+	text-align:center;
+}
+#blogConciergeBlock .menuConcierge li.top{
+	margin-right:10px;
+	float:right;
+}
+#blogConciergeBlock .menuConcierge li.top a{
+	margin:5px 0;
+	height:28px;
+	line-height:28px;
+	width:70px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	background-color:#FFE6E6;
+}
+/* -----↑blogConciergeBlock----- */
+
+
+/* -----↓rankingBlogPointList----- */
+#rankingBlogPointList .description{
+	height:25px;
+	line-height:25px;
+	padding:0 10px 0;
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+	font-size:14px;
+}
+#rankingBlogPointList .description span{
+	display:inline-block;
+	padding:0 5px;
+	margin-left:10px;
+	background-color:#ccc;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	font-weight:normal;
+}
+#rankingBlogPointList .btnRanking{
+	text-align:center;
+	margin-bottom:20px;
+}
+#rankingBlogPointList .btnRanking a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #ccc;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#fff;
+	display:inline-block;
+	padding:0 10px;
+	min-width:120px;
+}
+#rankingBlogPointList .btnRanking a:nth-of-type(n+2){
+	margin-left:10px;
+}
+#rankingBlogPointList .boxList .box{
+}
+#rankingBlogPointList .boxList .box.own{
+	background-color:#f0f0f0;
+}
+#rankingBlogPointList .boxList .box a{
+	display:block;
+	border-bottom:1px solid #ccc;
+	padding:10px 10px 10px 10px;
+}
+#rankingBlogPointList .boxList .box:nth-of-type(1) a{
+	border-top:1px solid #ccc;
+}
+#rankingBlogPointList .boxList .box a:hover{
+	text-decoration:none;
+}
+/* ↓ヘブン女の子MPリニューアル２次 2015/03/31 */
+#rankingBlogPointList .boxList .box a .rank,
+#rankingBlogPointList .boxList .box a .rank1,
+#rankingBlogPointList .boxList .box a .rank2,
+#rankingBlogPointList .boxList .box a .rank3{
+/* ↑ヘブン女の子MPリニューアル２次 2015/03/31 */
+	float:left;
+	font-size:10px;
+	line-height:15px;
+	height:15px;
+	width:25px;
+	text-align:center;
+	margin-top:50px;
+	margin-right:10px;
+	display:inline-block;
+	background-color:#ccc;
+}
+/* ↓ヘブン女の子MPリニューアル２次 2015/03/31 */
+#rankingBlogPointList .boxList .box a .rank1{
+	background-color:#ffc000;
+}
+#rankingBlogPointList .boxList .box a .rank2{
+	background-color:#a6a6a6;
+}
+#rankingBlogPointList .boxList .box a .rank3{
+	background-color:#984807;
+	color:#fff;
+}
+/* ↑ヘブン女の子MPリニューアル２次 2015/03/31 */
+#rankingBlogPointList .boxList .box a .img{
+	float:left;
+	width:90px;
+	margin-right:10px;
+}
+#rankingBlogPointList .boxList .box a .character{
+	float:right;
+	width:60px;
+	margin-top:30px;
+	margin-left:5px;
+}
+#rankingBlogPointList .boxList .box a .character img{
+}
+/* ↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+#rankingBlogPointList .boxList .box a .character-large{
+	float: right;
+	max-width: 35%;
+	min-width: 60px;
+}
+/* ↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+#rankingBlogPointList .boxList .box a ul{
+	overflow:hidden;
+	margin-top:20px;
+}
+#rankingBlogPointList .boxList .box a ul .name{
+	font-weight:bold;
+	font-size:14px;
+	line-height:20px;
+}
+#rankingBlogPointList .boxList .box a ul .level{
+}
+#rankingBlogPointList .boxList .box a ul .title{
+	font-weight:bold;
+	font-size:14px;
+	line-height:20px;
+}
+#rankingBlogPointList .boxList .box a ul .text{
+	background-color:#EB547A;
+	height:20px;
+	line-height:20px;
+	color:#fff;
+	margin:0 auto;
+	padding:0 10px;
+	display:inline-block;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+/* ↓ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+#rankingBlogPointList .boxList .box a .large-list{
+	max-width : 45px;
+	overflow:hidden;
+	margin-top:20px;
+}
+#rankingBlogPointList .boxList .box a .large-title{
+	font-weight:bold;
+	font-size:14px;
+	line-height:20px;
+}
+#rankingBlogPointList .boxList .box a ul .levelNum{
+	text-align: right;
+}
+#rankingBlogPointList .boxList .box a .name-largeIcon{
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+/* ↑ 写メっこちゃん大画像対応 @ EXCEED 2015/11/10 */
+/* -----↑rankingBlogPointList----- */
+
+
+/* -----↓rankingBlogPointWeeklyList----- */
+#rankingBlogPointWeeklyList .description{
+	height:25px;
+	line-height:25px;
+	padding:0 10px 0;
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+	font-size:14px;
+}
+#rankingBlogPointWeeklyList .description span{
+	display:inline-block;
+	padding:0 5px;
+	margin-left:10px;
+	background-color:#ccc;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	font-weight:normal;
+}
+#rankingBlogPointWeeklyList .btnRanking{
+	text-align:center;
+	margin-bottom:20px;
+}
+#rankingBlogPointWeeklyList .btnRanking a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #ccc;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#fff;
+	display:inline-block;
+	padding:0 10px;
+	min-width:120px;
+}
+#rankingBlogPointWeeklyList .btnRanking a:nth-of-type(n+2){
+	margin-left:10px;
+}
+#rankingBlogPointWeeklyList .boxList .box{
+}
+#rankingBlogPointWeeklyList .boxList .box.own{
+	background-color:#f0f0f0;
+}
+#rankingBlogPointWeeklyList .boxList .box a{
+	display:block;
+	border-bottom:1px solid #ccc;
+	padding:10px 10px 10px 10px;
+}
+#rankingBlogPointWeeklyList .boxList .box:nth-of-type(1) a{
+	border-top:1px solid #ccc;
+}
+#rankingBlogPointWeeklyList .boxList .box a:hover{
+	text-decoration:none;
+}
+#rankingBlogPointWeeklyList .boxList .box a ul{
+	float:left;
+	margin-right:10px;
+	text-align:center;
+	margin-top:30px;
+}
+#rankingBlogPointWeeklyList .boxList .box a .rank,
+#rankingBlogPointWeeklyList .boxList .box a .rank1,
+#rankingBlogPointWeeklyList .boxList .box a .rank2,
+#rankingBlogPointWeeklyList .boxList .box a .rank3{
+	float:left;
+	font-size:10px;
+	line-height:15px;
+	height:15px;
+	width:25px;
+	text-align:center;
+	margin-top:50px;
+	margin-right:10px;
+	display:inline-block;
+	background-color:#ccc;
+}
+#rankingBlogPointWeeklyList .boxList .box a .rank1{
+	background-color:#ffc000;
+}
+#rankingBlogPointWeeklyList .boxList .box a .rank2{
+	background-color:#a6a6a6;
+}
+#rankingBlogPointWeeklyList .boxList .box a .rank3{
+	background-color:#984807;
+	color:#fff;
+}
+
+#rankingBlogPointWeeklyList .boxList .box a .img{
+	float:left;
+	width:90px;
+	margin-right:10px;
+}
+#rankingBlogPointWeeklyList .boxList .box a .sum{
+	float:right;
+	text-align:center;
+	margin:30px 5px 0;
+	width:60px;
+	height:60px;
+	line-height:60px;
+	font-weight:bold;
+	font-size:14px;
+}
+#rankingBlogPointWeeklyList .boxList .box a .sum span{
+	font-size:18px;
+}
+#rankingBlogPointWeeklyList .boxList .box a .name{
+	overflow:hidden;
+	display:table;
+	font-weight:bold;
+	font-size:14px;
+	line-height:20px;
+}
+#rankingBlogPointWeeklyList .boxList .box a .name span{
+	display:table-cell;
+	vertical-align:middle;
+	height:120px;
+}
+/* -----↑rankingBlogPointWeeklyList----- */
+/* ↓ トーストメッセージ表示用 */
+div#toastMsg {
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	z-index: 5;
+	width: 99%;
+	margin: 0 auto;
+	background-color: #0b151c;
+	opacity: 0.9;
+	color: #FFF;
+	text-align: center;
+	border: 1px solid #717171;
+	border-radius: 11px;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	display: none;
+}
+div#toastMsg .content {
+	margin: 10px 5px ;
+}
+div#toastMsg .content .btnRow {
+	text-align: right;
+}
+div#toastMsg .content .btnRow #closeBtn {
+	display: block;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 10px 0 auto;
+	padding-right: 2px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #000000;
+	border: 1px solid #FFFFFF;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+div#toastMsg .content .message {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+}
+/* ↑ トーストメッセージ表示用 */
+
+/* -----↓blogEdit----- */
+#blogEdit .toList{
+	margin:0 10px 10px;
+}
+#blogEdit .toList a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color:#EB547A;
+	display:block;
+	background-color:#FFE6E6;
+	width:250px;
+	margin:0 auto;
+}
+#blogEdit .update{
+	margin:0 10px 10px;
+}
+#blogEdit .update a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color:#EB547A;
+	display:block;
+	background-color:#FFE6E6;
+	width:250px;
+	margin:0 auto;
+}
+#blogEdit .list-title{
+	margin-bottom:5px;
+	line-height:30px;
+	height:30px;
+	font-weight:bold;
+	background-color:#f5f5f5;
+	padding: 5px 10px;
+}
+#blogEdit .box{
+	padding: 5px 10px;
+}
+/*↓base.cssから移植*/
+/*↓指アイコンのレイヤー*/
+#blogEdit .finger-layer {
+	position: absolute;
+	z-index: 2;
+	width: 50px;
+	height: 50px;
+}
+/*↑指アイコンのレイヤー*/
+/*↓指アイコンの大きさ*/
+#blogEdit .finger-img {
+	width: 30px;
+	height: 30px;
+}
+/*↑指アイコンの大きさ*/
+#blogEdit .picture {
+	position: relative;
+	margin-bottom: 10px;
+	width: 122px;
+	height: 168px;
+}
+#blogEdit .picture .finger-layer {
+	top: 148px;	/*.picture-imgの大きさを変更したら指の位置を変更するためにこちらも変更すること*/
+	left: 80px;	/*.picture-imgの大きさを変更したら指の位置を変更するためにこちらも変更すること*/
+}
+#blogEdit .picture-link {
+	width: 120px;
+	height: 160px;
+	position: absolute;
+	z-index: 3;
+}
+#blogEdit .layer {
+	width: 120px;
+	height: 160px;
+	margin: 5px;
+}
+#blogEdit .layer-frame {
+	height: 160px;
+}
+/*↓画像の大きさ*/
+#blogEdit .picture-img {
+	width: 120px;
+	height: 168px;
+}
+/*↑画像の大きさ*/
+#blogEdit .modeSelect {
+	position: absolute;
+	display: none;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.496094) 2px 2px 3px;
+	background: #ffffff;
+	border: 1px solid #888888;
+	border-bottom-left-radius: 12px 12px;
+	border-bottom-right-radius: 12px 12px;
+	border-top-left-radius: 12px 12px;
+	border-top-right-radius: 12px 12px;
+	padding: 10px;
+	z-index: 9;
+	width: 90%;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+}
+/*↑base.cssから移植*/
+/* -----↑blogEdit----- */
+
+/* -----↓messageDetail----- */
+#messageDetail{
+	margin-bottom:10px;
+}
+#messageDetail a{
+	color:#333;
+}
+#messageDetail .setting{
+	text-align:right;
+}
+#messageDetail .setting li{
+	display:inline-block;
+	line-height:25px;
+	height:25px;
+	margin-right:10px;
+}
+#messageDetail .setting li a{
+	font-weight: normal;
+}
+#messageDetail .setting li a img{
+	width:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+#messageDetail .setting li a span{
+	vertical-align:middle;
+}
+#messageDetail .button{
+	margin:0 10px 10px;
+}
+#messageDetail .button a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color:#EB547A;
+	display:block;
+	background-color:#FFE6E6;
+	width:250px;
+	margin:0 auto;
+}
+#messageDetail .list-title{
+	margin-bottom:5px;
+	line-height:30px;
+	height:30px;
+	font-weight:bold;
+	background-color:#f5f5f5;
+	padding: 5px 10px;
+}
+#messageDetail .box{
+	padding: 5px 10px;
+}
+#messageDetail .txt16{
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-align: center;
+	font-size: 14px;
+}
+#messageDetail p.appLink{
+	margin-bottom: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
+#messageDetail p.appLink a{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	line-height:20px;
+	background: -moz-linear-gradient(top, #ff0000, #dc143c);
+	background: -webkit-gradient(linear, center top, center bottom, from(#ff0000), to(#dc143c));
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ff0000, EndColorStr=#dc143c);
+	border:1px solid #dc143c;
+	text-decoration:none;
+	font-weight:bold;
+	font-size: 14px;
+	color:#fff;
+	display:inline-block;
+	padding:5px 10px;
+	width:230px;
+}
+#messageDetail .errorMsg{
+	font-size: 12px;
+	color: red;
+	padding-bottom:10px;
+}
+/* -----↑messageDetail----- */
+#inputError,
+#emgMes {
+	position: absolute;
+	z-index: 100;
+}
+#inputError .error-message {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 4px solid #525252;
+	color: #000000;
+	left: 50%;
+	position: fixed;
+	text-align: left;
+	top: 50%;
+	z-index: 102;
+	margin-left: -140px;
+	width: 285px;
+	margin-top: -80px;
+}
+#inputError .txt11{
+	font-size: 11px;
+}
+#inputError .txt-center{
+	text-align: center;
+}
+#inputError .red{
+	color: #FF0000;
+}
+#inputError .txt14{
+	font-size: 14px;
+}
+#dialogBg {
+	height: 10000px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 101;
+	background-color: #000;
+	filter: alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+
+/* ↓ ヘルプアイコン */
+span.helpBtn {
+//	background-image: URL('/css/renew_spgirl/images/pink_icn_tutorial_normal.png');
+	position: absolute;
+	display: block;
+	background-size: 30px 30px;
+	top: 8px;
+	height: 30px;
+	width: 30px;
+	right: 10px;
+	background-repeat: no-repeat;
+}
+
+span.helpBtnClick {
+//	background-image: URL('/css/renew_spgirl/images/pink_icn_tutorial_pressed.png');
+	position: absolute;
+	display: block;
+	background-size: 30px 30px;
+	top: 8px;
+	height: 30px;
+	width: 30px;
+	right: 10px;
+	background-repeat: no-repeat;
+}
+/* ↑ ヘルプアイコン */
+
+/* ↓ リスト画面共通フッター */
+#footer {
+	height: 120px;
+}
+/* ↑ リスト画面共通フッター */
+/* ↓ スケジュール簡単投稿 2015/03/31 */
+
+#shukkin_feed>.explain,#shukkin_feed>div {
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+#shukkin_feed ul li {
+	margin-bottom: 10px;
+}
+
+#shukkin_feed .contents {
+	font-size: medium;
+}
+#shukkin_feed .body .contents {
+	font-weight: bold;
+}
+#shukkin_feed .ok_button {
+	display: block;
+	text-align: center;
+	margin-top : 16px;
+}
+#shukkin_feed .ok_button>a {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	border:1px solid #f69;
+	text-decoration:none;
+	text-align:center;
+	font-weight:bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color:#EB547A;
+	background-color:#FFE6E6;
+	display:inline-block;
+	padding:0 10px;
+	width:230px;
+}
+/* ↑ スケジュール簡単投稿 2015/03/31 */
+/* ↓ WEB版女の子マイページ写メ日記予約投稿 2016/03/29 */
+#blogReserve .selectAreaWrap{
+    width: 100%;
+}
+#blogReserve .selectArea{
+    margin: 0 auto 10px;
+    width: 280px;
+}
+#blogReserve #resDate{
+    margin-right: 10px;
+    background: #FFFBFB;
+    border: 2px solid #EB547A;
+    border-radius: 5px;
+    color: #0C2245;
+    font-size: 14px;
+    text-align: left;
+    vertical-align: middle;
+    width: 150px;
+    padding: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#blogReserve #resTime{
+    margin-right: 10px;
+    background: #FFFBFB;
+    border: 2px solid #EB547A;
+    border-radius: 5px;
+    color: #0C2245;
+    font-size: 14px;
+    text-align: left;
+    vertical-align: middle;
+    width: 105px;
+    padding: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#blogReserve .resGuideMargin{
+    margin-bottom:10px;
+}
+#blogReserve .send{
+    margin:0 10px 10px;
+}
+#blogReserve .send a{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    border:1px solid #f69;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color:#EB547A;
+    display:block;
+    background-color:#FFE6E6;
+    width:250px;
+    margin:0 auto;
+}
+#blogReserve .sendIos a{
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #a5a294;
+    background-color: #e3e1d6;
+    box-shadow: 0px 4px 0px #a5a294;
+    color: #007cc0;
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    display: block;
+    width: 280px;
+    margin: 0 auto 15px;
+}
+#blogReserve .send a img{
+    width:20px;
+    margin-right:5px;
+    vertical-align:middle;
+}
+#blogReserve .send a span{
+    vertical-align:middle;
+}
+/* ↑ WEB版女の子マイページ写メ日記予約投稿 2016/03/29 */
+/* ↓写メ日記保持期間延長[AmazonRDS対応] 2016/09/06 */
+#blogList h3 a.change_btn{
+	position:relative;
+	right:0;
+	top:-1px;
+	margin-left:5px;
+}
+#blogList .boxList .box a ul .title.non-link{
+	color:#333;
+}
+/* ↑写メ日記保持期間延長[AmazonRDS対応] 2016/09/06 */
+#fixedMenu #messageBtn a .countMax{
+	position:absolute;
+	text-align:center;
+	right:11px;
+	top:1px;
+	color:#fff;
+	font-size:10px;
+	width:18px;
+	height:18px;
+	line-height:18px;
+	background-color:#FF7F00;
+	border-radius:10px;
+	border:1px solid #fff;
+}
+/* 姫デコ文言追加 SC 2019/04/08  */
+.announcement_button {
+    text-align: center;
+    border: solid 1px #f69;
+    width: 230px;
+    padding: 8px 10px;
+    margin: 0 auto;
+    margin-bottom: 13px;
+    font-size: 14px;
+}
+.news_sentence {
+	padding-bottom: 7px;
+    margin: 0px 14px;
+}
+/* ↓日記動画投稿 @  2019/10/23 */
+#blogList .boxList .box a.disabled_arrow{
+    overflow:hidden;
+    display:-webkit-flex;
+    display:flex;
+    pointer-events: none;
+    color: #999;
+}
+#blogList .boxList .box a ul .disabled_title{
+    line-height:25px;
+    height:25px;
+    color:#558ED5;
+    font-size:14px;
+    pointer-events: none;
+    color: #999;
+}
+#blogList .boxList .box .disabled_btn{
+    height:88px;
+    line-height:88px;
+    float:left;
+    width:45px;
+    text-align:center;
+    visibility: hidden;
+}
+#blogList .boxList .box a{
+    height: 88px;
+    display: -webkit-flex;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#blogList .boxList .box a ul{
+    margin-right: auto;
+}
+#blogList .boxList .box .btn{
+    height: 88px;
+    line-height: 88px;
+}
+#blogList .boxList .box a .img{
+    float: none;
+}
+/* ↑日記動画投稿 @  2019/10/23 */
+/* ↓[H]口コミ描いてよQR作戦 2020/02/26 */
+div.denshimeishi {
+	background:#FFFFFF
+} 
+ul.qrChange{
+	width:100%;
+    text-align:  center;
+    margin:10px 0 0 0;
+}
+ul.qrChange li{
+    display:  inline-block;
+    border:0px;
+    width: 49%;
+    padding:15px 0;
+    font-size:16px;
+}
+ul.qrChange li:last-child{
+    background:#FFE6E6;
+}
+div.mypage{
+	padding:10px 0;
+
+}
+div.review{
+	padding:10px 0;
+    background:#FFE6E6;
+    display:none;
+}
+/* ↑[H]口コミ描いてよQR作戦 2020/02/26 */
+
+#frontpage #backbtn{
+	position: fixed;
+    bottom: 95px;
+    right: 100px;
+    padding: 11px 2px;
+    background-color: #FFFF;
+    color: #ec6e83;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    height: 19px;
+    border-width: 1.5px;
+}
+
+@media screen and (max-width: 320px) {
+	#frontpage #backbtn{
+		position: fixed;
+		bottom: 95px;
+		right: 78px;
+		padding: 11px 3px;
+		background-color: #FFFF;
+		color: #ec6e83;
+		border: 1px solid;
+		border-radius: 5px;
+		font-size: 10px;
+		font-weight: bold;
+		height: 15px;
+		width: 60px;
+		border-width: 1.5px;
+	}
+}
+/* ↓【スマホ】アドスペースキャストDバナー */
+.KeitaiDecoDiary_area .footer_adbanner {
+    position: absolute;
+    width: 100%;
+    top: 615px;
+}
+/* ↑【スマホ】アドスペースキャストDバナー */
+
+/* ↓【地域特化型対策_一括キテネ対応 */
+.comeon_bulk {
+	position: fixed;
+	width: 170px;
+    bottom: 10px;
+	/* ↓ キテネスタンプ対応 2023/09/25 */
+    /* right: 60px; */
+	right: 20px;
+	/* ↑ キテネスタンプ対応 2023/09/25 */
+	z-index: 10;
+	display: block;
+}
+
+/* ↓ トーストメッセージ表示用 */
+.success_bglift {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    top: 0px;
+    z-index: 1020;
+    display: none;
+}
+.success_bglift .success_message {
+    width: 84%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30vh;
+    margin: auto;
+    background: #FFCC00;
+    border-radius: 10px;
+    color: #000000;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.success_bglift .success_message .icon_check {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    background: #000000;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 15px;
+    border-radius: 50%;
+}
+.success_bglift .success_message .icon_check:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 5px;
+    border-left: 3px solid #FFCC00;
+    border-bottom: 3px solid #FFCC00;
+    transform: rotate(-45deg);
+    position: relative;
+    left: 0;
+    right: 174px;
+    top: -20px;
+    margin: auto;
+}
+/* ↑【地域特化型対策_一括キテネ対応 */
+
+.magazine-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+}
+.magazine-link-text::before {
+    content: "i";
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    background: #ea547a;
+    border-radius: 100%;
+    font-size: 10px;
+    font-weight: bold;
+}
+.magazine-link-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #ea547a !important;
+    text-decoration: underline;
+}
+

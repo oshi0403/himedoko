@@ -1,0 +1,4 @@
+document.write('<div class="footer_adbanner" style="margin-top: 8px;border: 1px solid #fff;">');
+document.write('<a href="//d-markets.net/markets/p/r?_loc=600290001&_article=2158761&_link=2041792" style="display:block;" target="_blank"><img src="//img.cityheaven.net/img/adbanner2/adsv0002041792.png?cache02=20260202102010&imgopt=y" style="display:block;width:100%;"></a>');
+document.write('</div>');
+

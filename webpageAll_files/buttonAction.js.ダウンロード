@@ -1,0 +1,138 @@
+$(function() {
+
+	// デコオプション プレビュー画面で「決定」を押下した場合
+	$('.designConfirm').click(function() {
+		var flag = confirm('デザインを変更します。\nよろしいですか?');
+		if (flag) {
+			document.form_update.submit();
+		} else {
+			return false;
+		}
+	});
+
+	$('.delBtn').click(function() {
+		var conf =  confirm('削除します。\nよろしいですか？');
+		if (conf) {
+
+		} else {
+			return false;
+		}
+	});
+
+	// メッセージ削除ボタンの押下処理
+	$('.message-delete-btn').click(function() {
+		// 削除ボタンが押下された時にチェック済みのメッセージがあるか確認
+		var check_flag = false;
+		$('.del-list li').each(function() {
+			var elmTd = $(this).find('.check_on_off input');
+			if (elmTd.attr('checked') == 'checked') {
+				check_flag = true;
+				return false;
+			}
+		});
+		if (!check_flag) {
+			var msg = $('#delete_err_msg').val(); // エラーメッセージ
+			alert(msg);
+			return false;
+		} else {
+			var conf = confirm('選択したデータを削除します。\nよろしいですか？');
+			if (conf) {
+				document.form.submit();
+				return false;
+			} else {
+				return false;
+			}
+		}
+	});
+
+	// 写メ日記削除ボタン、女の子写メ日記削除ボタンの押下処理
+	$('.diary-delete-btn').click(function() {
+		// 更新ボタンを押された時にチェックが入っているか確認する
+		var tmpArray = new Array();
+		$('.del-list li').each(function() {
+			var elmTd = $(this).find('.check_on_off input');
+			if (elmTd.attr('checked') == 'checked') {
+				tmpArray.push($(this).attr('id'));
+			}
+		});
+		if (tmpArray.length == 0) {
+			alert('１つ以上チェックしてください');
+			return false;
+		} else {
+			if (confirm('削除します。よろしいですか？')) {
+				// 削除対象のIDを文字列にしてFormを送信する
+				document.form.list_data.value = tmpArray.join(',');
+				document.form.submit();
+			} else {
+				// キャンセル押下時は何もしない
+				return false;
+			}
+		}
+	});
+
+	// コメント編集 「更新する」を押下した場合
+	$('#cmt-update').click(function() {
+		var conf =  confirm('更新します。\nよろしいですか？');
+		if (conf) {
+			$('#cmt').submit();
+			return false;
+		} else {
+			return false;
+		}
+	});
+
+	// 迷惑メールに設定
+	$('.btn-spam').click(function() {
+		var conf =  confirm('この送信者を迷惑メールに設定しますか？');
+		if (conf) {
+		} else {
+			return false;
+		}
+	});
+
+	// 迷惑メールを解除
+	$('.btn-unspam').click(function() {
+		var conf =  confirm('この送信者の迷惑メール設定を解除しますか？');
+		if (conf) {
+		} else {
+			return false;
+		}
+	});
+
+	// 投稿完了メール設定を保存
+	$('.settbtn').click(function() {
+		var conf =  confirm('設定を保存します。\nよろしいですか？');
+		if (conf) {
+			$('#setting').submit();
+			return false;
+		} else {
+			return false;
+		}
+	});
+
+	// 受信メッセージ削除
+	$('.recv-message-delete-btn').click(function() {
+		// 更新ボタンを押された時にチェックが入っているか確認する
+		var tmpArray = new Array();
+		$('.del-list li').each(function() {
+			var elmTd = $(this).find('.check_on_off input');
+			if (elmTd.attr('checked') == 'checked') {
+				tmpArray.push($(this).attr('id'));
+			}
+		});
+		if (tmpArray.length == 0) {
+			alert('１つ以上チェックしてください');
+			return false;
+		} else {
+			if (confirm('削除します。\nよろしいですか？')) {
+				// 削除対象のIDを文字列にしてFormを送信する
+				document.form.list_data.value = tmpArray.join(',');
+				document.form.submit();
+			} else {
+				// キャンセル押下時は何もしない
+				return false;
+			}
+		}
+	});
+
+});

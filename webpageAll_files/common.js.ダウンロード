@@ -1,0 +1,172 @@
+
+$(document).ready(function() {
+	$('iframe').load(function(){
+		if (typeof $(this).attr('height') == 'undefined' || '0' ) {
+			$(this).height($(this).contents().find('body').height());
+			$(this).width($(window).width());
+		}
+	});
+	$('iframe').triggerHandler('load');
+});
+
+
+$(window).load(function(){
+//	$(".week tr th").width($(".weeklyData .blog th").outerWidth());
+
+// ↓女の子マイページエディタ対応 2016/04/27
+	// フロートメニューの高さ取得
+	var fixedMenuHeight = 0;
+	if( $('#fixedMenu').length ) {
+		fixedMenuHeight = $('#fixedMenu').height();
+	}
+// ↑女の子マイページエディタ対応 2016/04/27
+	var bannerApp = $('#bannerApp');
+	bannerApp.addClass("fixed");
+
+	var iOSApp = $('#sp_slide');
+	var iOSAppheight = 0;
+	if(iOSApp.height()){
+		iOSAppheight = iOSApp.height() + 20;
+	}
+// ↓女の子マイページエディタ対応 2016/04/27
+//	$('body').css("padding-bottom",bannerApp.height());
+	// バナーメニュー + フロトメニューをbottomに設定
+        if(navigator.userAgent.indexOf('iPhone')>0){
+	$('body').css("padding-bottom",bannerApp.height() + fixedMenuHeight + iOSAppheight);
+        }else{
+	$('body').css("padding-bottom",bannerApp.height() + fixedMenuHeight);
+        }
+	bannerApp.css("bottom",fixedMenuHeight);
+// ↑女の子マイページエディタ対応 2016/04/27
+
+});
+//↓ヘブン女の子MPリニューアル２次 2015/03/31
+	var weeklyHeight = 0;
+	var monthlyHeight = 0;
+$(function () {
+	$('.marquee p').each(function(){
+		$(this).marquee({speed: 30000,});
+	});
+
+	monthlyHeight = $('#statisticsBlock .monthlyData .boxList').outerHeight();
+//↑ヘブン女の子MPリニューアル２次 2015/03/31
+	$('#statisticsBlock .monthlyData .boxList .box.week').each(function(){
+		weeklyHeight = weeklyHeight + $(this).outerHeight();
+	});
+	$('#statisticsBlock .monthlyData .boxList').height(weeklyHeight).css("overflow","hidden");
+
+	$('#statisticsBlock .btn a').click(function(){
+		if($(this).hasClass("hidden")){
+			//↓ヘブン女の子MPリニューアル２次 2015/03/31
+			$('#statisticsBlock .monthlyData .boxList').animate({height:monthlyHeight},200);
+			//↑ヘブン女の子MPリニューアル２次 2015/03/31
+/*
+			$('#statisticsBlock .monthlyData .boxList .box').addClass("visible");
+*/
+			$('#statisticsBlock .btn .hidden').removeClass("active");
+			$('#statisticsBlock .btn .visible').addClass("active");
+
+			if( $('#checkalink').length ) {
+				var alk = $('a#checkalink').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=wk7', '=mh30');
+				} else {
+					alk = $('a#checkalink').attr('href') + '&active=mh30';
+				}
+				$('a#checkalink').attr('href', alk);
+			}
+
+			if( $('#checkalinkm1').length ) {
+				var alk = $('a#checkalinkm1').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=wk7', '=mh30');
+				} else {
+					alk = $('a#checkalinkm1').attr('href') + '&active=mh30';
+				}
+				$('a#checkalinkm1').attr('href', alk);
+			}
+
+			if( $('#checkalinkp1').length ) {
+				var alk = $('a#checkalinkp1').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=wk7', '=mh30');
+				} else {
+					alk = $('a#checkalinkp1').attr('href') + '&active=mh30';
+				}
+				$('a#checkalinkp1').attr('href', alk);
+			}
+		}
+
+		if($(this).hasClass("visible")){
+			//↓ヘブン女の子MPリニューアル２次 2015/03/31
+			$('#statisticsBlock .monthlyData .boxList').height(weeklyHeight).css("overflow","hidden");
+			//↑ヘブン女の子MPリニューアル２次 2015/03/31
+/*
+			$('#statisticsBlock .monthlyData .boxList .box').removeClass("visible");
+*/
+			$('#statisticsBlock .btn .visible').removeClass("active");
+			$('#statisticsBlock .btn .hidden').addClass("active");
+
+			if( $('#checkalink').length ) {
+				var alk = $('a#checkalink').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=mh30', '=wk7');
+				} else {
+					alk = $('a#checkalink').attr('href') + '&active=wk7';
+				}
+				$('a#checkalink').attr('href', alk);
+			}
+
+			if( $('#checkalinkm1').length ) {
+				var alk = $('a#checkalinkm1').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=mh30', '=wk7');
+				} else {
+					alk = $('a#checkalinkm1').attr('href') + '&active=wk7';
+				}
+				$('a#checkalinkm1').attr('href', alk);
+			}
+
+			if( $('#checkalinkp1').length ) {
+				var alk = $('a#checkalinkp1').attr('href');
+				if(alk.lastIndexOf('active') > 0) {
+					alk = alk.replace('=mh30', '=wk7');
+				} else {
+					alk = $('a#checkalinkp1').attr('href') + '&active=wk7';
+				}
+				$('a#checkalinkp1').attr('href', alk);
+			}
+		}
+		return false;
+
+	});
+
+	$('#statisticsRankingSettingBlock .rankingBlock dl').click(function(){
+		$(this).toggleClass("active");
+		$(this).next().slideToggle();
+	});
+});
+
+function isInputElement(elem) {
+	switch (elem.type) {
+		case "text":
+		case "radio":
+		case "checkbox":
+		case "password":
+			return true;
+	}
+	return false;
+}
+
+function targetScroll(name) {
+	if($("#"+name).size() > 0){
+		location.hash = name;
+	}
+}
+
+function txtEditAppStart(){
+	if($("#app_text_mark").size() > 0){
+		location.hash = "app_text_mark";
+		document.app_form.submit();
+	}
+}

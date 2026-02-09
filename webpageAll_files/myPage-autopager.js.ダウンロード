@@ -1,0 +1,24 @@
+// 次ページ読み込みおよびプログレス表示
+$(function() {
+	if ($('.boxList').size() > 0) {
+		$.autopager({
+			content: '.boxList',
+			link: '#next a',
+			start: function(current, next){
+				$('#loading').css('display', 'block');
+				$('#next a').css('display', 'none');
+			},
+			load: function(current, next){
+				$('#loading').css('display', 'none');
+				$('#next a').css('display', 'block');
+				
+				if( current.page >= maxpage ){
+					$.autopager({autoLoad: false});
+				}
+				if ($('.hook').size() > 0){
+					callFlicksnap();
+				}
+			}
+		});
+	}
+});

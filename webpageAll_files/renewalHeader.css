@@ -1,0 +1,62 @@
+#menuGrobal.header-menu {
+    padding-left: 100px;
+    padding-right: 8px;
+    font-size: 12px;
+    text-align: right;
+    line-height: 32px;
+    height: 32px;
+    border-bottom: 2px solid #ea547a;
+    background: rgba(255,255,255,0.8);
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 299;
+    -webkit-transform: none;
+    transform: none;
+}
+.logo {
+    display: block;
+    position: absolute;
+    left: 8px;
+}
+#menuGrobal.header-menu>a {
+    color: #555;
+    font-weight: bold;
+}
+#menuGrobal.header-menu a>* {
+    height: 20px;
+    line-height: 24px;
+    vertical-align: middle;
+    padding: 0 3px 0 0;
+}
+/* ↓[H]姫デコの自分のページを見るリンクの変更 2021/12/14 */
+#menuGrobal.header-menu form{
+    display: inline;
+}
+#menuGrobal.header-menu form>a{
+    color: #555;
+    font-weight: bold;
+}
+/* ↑[H]姫デコの自分のページを見るリンクの変更 2021/12/14 */
+div.contents {
+    padding-top: 32px;
+}
+/* H1515 2021/06/29 */
+.unread_notify_count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background: #ea5151;
+    color: #fff;
+    font-weight: bold;
+    min-width: 15px;
+    font-size: 11px;
+    height: 15px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 15px;
+}
+/* H1515 2021/06/29 */

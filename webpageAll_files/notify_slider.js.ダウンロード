@@ -1,0 +1,120 @@
+$('#toggle-sidebar').on('click',function(){
+    if($('#slide_area').hasClass('disp_off')){
+        $('#slide_mask').removeClass('mask_off');
+        $('#slide_area').removeClass('disp_off');
+        $('#slide_mask').fadeIn('300');
+        $('#slide_area').animate({'marginRight':'300px'},300).addClass('disp_on');
+    }else{
+        $('#slide_mask').addClass('mask_off');
+        $('#slide_area').addClass('disp_off');
+        $('#slide_mask').fadeOut('300');
+        $('#slide_area').animate({'marginRight':'0px'},300);
+    }
+});
+
+$('#slide_mask').on('click',function(){
+    $('#slide_mask').addClass('mask_off');
+    $('#slide_area').addClass('disp_off');
+    $('#slide_mask').fadeOut('300');
+    $('#slide_area').animate({'marginRight':'0px'},300);
+});
+
+$(document).ready(function(){
+    fit();
+    $(window).resize(function(){
+        fit();
+    })
+    function fit(){
+        var h = $(window).height();
+        $('.slide-inner').css("height",h);
+    }
+});
+
+function loginModalShowNotify(gid, detailId, type){
+    var passwd = $('input:hidden[name="auth_'+gid+'"]').val();
+    var girls_name = $('input:hidden[name="girls_name_'+gid+'"]').val();
+    var shop_name = $('input:hidden[name="shop_name_'+gid+'"]').val();
+    var biz_name = $('input:hidden[name="biz_name_'+gid+'"]').val();
+    var area_name = $('input:hidden[name="area_name_'+gid+'"]').val();
+
+    $('#notify-slide-login-girls-name').text(girls_name+'さん');
+    $('#notify-slide-login-shop-name').text(shop_name);
+    $('#notify-slide-login-biz-name').text(biz_name);
+    $('#notify-slide-login-area-name').text(area_name);
+
+    if (type == 'reservation') {
+        $('#login-modal-notify-type-text').text('予約');
+    } else if (type == 'review') {
+        $('#login-modal-notify-type-text').text('口コミ');
+    // ↓ 店舗と姫デコでのチャット機能追加 @NLS 2025/06/30 条件とテキストの追加
+    //}
+    } else if (type == 'notice') {
+        $('#login-modal-notify-type-text').text('店舗からのお知らせ');
+    } else if (type == 'chat') {
+        $('#login-modal-notify-type-text').text('店舗からのチャット');
+    }
+    // ↑ 店舗と姫デコでのチャット機能追加 @NLS 2025/06/30 条件とテキストの追加
+
+    $('#notify-slide-login-change').attr('onclick', 'loginChangeNotify('+gid+', '+detailId+', "'+type+'");');
+
+    $('#login-modal-notify-mask').css('display', 'block');
+    $('#login-modal-notify').css('display', 'block');
+}
+
+function loginChangeNotify(gid, detailId, type) {
+    var postData = {};
+    postData['auth'] = $('input:hidden[name="auth_'+gid+'"]').val();
+    postData['gid'] = gid;
+
+    var logout = false;
+    var login = false;
+    jQuery.ajax({
+            url: '/J1GirlMyPageSetting.php?method=logout',
+            async: false,
+            type: 'GET',
+            data: '',
+            success: function(data) {
+                logout = true;
+            },
+            complete: function(){},
+            error: function() {
+                logout = false;
+            }
+    });
+    jQuery.ajax({
+            url: '/J1EasyLogin.php?method=init',
+            async: false,
+            type: 'GET',
+            data: postData,
+            success: function(data) {
+                login = true;
+            },
+            complete: function(){},
+            error: function() {
+                alert('ログインに失敗しました。\r\nログイン画面に遷移します。');
+                login = false;
+            }
+    });
+    if (login && type == 'reservation') {
+        window.location.href = '/J4GirlReservDetail.php?reservation_id='+detailId+'&gid=' + gid;
+    } else if (login && type == 'review') {
+        window.location.href = '/J4ReviewDetail.php?review_id='+detailId+'&gid=' + gid;
+    // ↓ H1713_相互オキニトーク
+    } else if (login && type == 'favorite') {
+        window.location.href = '/J4GirlMyGirl.php?&gid=' + gid;
+    // ↑ H1713_相互オキニトーク
+    // ↓ 店舗と姫デコでのチャット機能追加 @NLS 2025/06/30 条件とテキストの追加
+    } else if (login && type == 'notice') {
+        window.location.href = '/J1ShopNoticeDetail.php?message_id='+detailId;
+    } else if (login && type == 'chat') {
+        window.location.href = '/shopchat/talk?cid='+detailId;
+    // ↑ 店舗と姫デコでのチャット機能追加 @NLS 2025/06/30 条件とテキストの追加
+    } else {
+        window.location.href = '/';
+    }
+}
+
+function showLoginCloseNotify(){
+    $('#login-modal-notify-mask').css('display', 'none');
+    $('#login-modal-notify').css('display', 'none');
+}

@@ -1,0 +1,6 @@
+document.write('<div>');
+document.write('<a href="//d-markets.net/markets/p/r?_loc=3536&_article=2158397&_link=2041791" style="display:block;">');
+document.write('<img src="//img.cityheaven.net/img/adbanner2/adsv0002041791.png?cache02=20260202101953&imgopt=y" style="display:block;width:100%;">');
+document.write('</a>');
+document.write('</div>');
+

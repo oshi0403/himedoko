@@ -1,0 +1,35 @@
+$(function () {
+	var flipsnap = Flipsnap('#dialog .dialogInner ul',{
+		distance:290,
+	});
+	var $pointer = $('#dialog .pointer span');
+	flipsnap.element.addEventListener('fspointmove', function() {
+		$pointer.filter('.current').removeClass('current');
+		$pointer.eq(flipsnap.currentPoint).addClass('current');
+	}, false);
+	var $next = $('#dialog .dialogInner .btnNext').click(function(){
+		flipsnap.toNext();
+	});
+	var $next = $('#dialog .next').click(function() {
+		flipsnap.toNext();
+	});
+	var $prev = $('#dialog .prev').click(function() {
+		flipsnap.toPrev();
+	});
+
+	$('#helpBtnConcierge a').click(function(){
+		// ↓ 2022/10/01 姫デコのHOWTO内容変更
+		$('#dialog').css('top',($(window).height()-$('#dialog').outerHeight())/2);
+		// ↑ 2022/10/01 姫デコのHOWTO内容変更
+		$('#dialog').jqm().jqmShow();
+	});
+	$('.btnConcierge a').click(function(){
+		// ↓ 2022/10/01 姫デコのHOWTO内容変更
+		$('#dialog').css('top',($(window).height()-$('#dialog').outerHeight())/2);
+		// ↑ 2022/10/01 姫デコのHOWTO内容変更
+		$('#dialog').jqm().jqmShow();
+	});
+	$('#dialog #dialog-close').click(function(){
+		$('#dialog').hide();
+	});
+});
