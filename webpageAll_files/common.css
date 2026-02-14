@@ -1528,7 +1528,7 @@ opacity:0.9;
 	clear:both;
 }
 #statisticsBlock .monthlyData .btn a{
-	display:none;
+    display:none;
 }
 #statisticsBlock .monthlyData .btn a:hover{
 	text-decoration:none;
